@@ -2,200 +2,340 @@
 <html>
     <head>
         <title>Page Title</title>
-        <link rel="stylesheet" href="index.css" type="text/css" />
+        <link rel= 'stylesheet'   href="index.css" type='text'/>
     </head>
     <body>
         <!DOCTYPE html>
-        <html>
-            <head>
-                <meta name="viewport" content="width=device-width, initial-scale=1">
-                <style>
-                    section {
-                        text-align: center;
-                    }
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
 
-                    body {
-                        font-family: "Blippo", fantasy;
-                        background-color: #f5f5f5; /* Light gray for a clean background */
-                        color: #333; /* Dark gray for text */
-                    }
+    section{text-align:center;
+    }
 
-                    .sidenav {
-                        height: 100%;
-                        width: 0;
-                        position: fixed;
-                        z-index: 1;
-                        top: 0;
-                        right: 0;
-                        background-color: #2c3e50; /* Dark blue-gray */
-                        overflow-x: hidden;
-                        transition: 0.5s;
-                        padding-top: 60px;
-                    }
+body {
+font-family: Blippo, fantasy;
 
-                    .sidenav a {
-                        background-color: #34495e; /* Medium blue-gray */
-                        text-align: center;
-                        padding: 12px 12px 12px 32px;
-                        text-decoration: none;
-                        font-size: 20px;
-                        font-weight: bold;
-                        color: #ecf0f1; /* Off-white for text */
-                        display: block;
-                        transition: 0.3s;
-                        border-radius: 4px;
-                        margin: 4px 0; /* Spacing between links */
-                    }
+}
 
-                    .sidenav a:hover {
-                        color: #1abc9c; /* Green accent color */
-                    }
+.sidenav {
 
-                    .sidenav .closebtn {
-                        position: absolute;
-                        top: 0;
-                        right: 25px;
-                        font-size: 36px;
-                        color: #ecf0f1;
-                        margin-left: 50px;
-                    }
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color:#FEEADC ;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
 
-                    @media screen and (max-height: 450px) {
-                        .sidenav {
-                            padding-top: 15px;
-                        }
-                        .sidenav a {
-                            font-size: 18px;
-                        }
-                    }
+.sidenav a {
+Background-color:#f1f1f1;
+Text-align:center;
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 20px;
+  Font-weight:bold;
+  color: black;
+  display: block;
+  transition: 0.3s;
+}
 
-                    h3 {
-                        text-align: center;
-                    }
+.sidenav a:hover {
+  color:grey;
+}
 
-                    p {
-                        text-align: center;
-                    }
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
 
-                    img {
-                        margin-right: 25px;
-                        margin-left: 10px;
-                    }
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
 
-                    /* Slideshow styling */
-                    .slideshow-container {
-                        max-width: 1000px;
-                        position: relative;
-                        margin: auto;
-                    }
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#aboutme">About Me</a><br />
+  <a href="Technical Skills And Certification.html">Technical Skills And Certification</a><br />
+  <a href="My Projects.html">My Projects</a><br />
+  <a href="https://www.dropbox.com/s/0gwdcv1wk9ydhrk/CV_2020-06-13-091445.pdf?dl=0">Resume</a><br />
+  <a href="#contact">Contact</a>
 
-                    .prev,
-                    .next {
-                        cursor: pointer;
-                        position: absolute;
-                        top: 50%;
-                        width: auto;
-                        padding: 16px;
-                        margin-top: -22px;
-                        color: #2c3e50;
-                        font-weight: bold;
-                        font-size: 18px;
-                        transition: 0.6s ease;
-                        border-radius: 0 3px 3px 0;
-                        user-select: none;
-                        background-color: rgba(236, 240, 241, 0.8); /* Semi-transparent white */
-                    }
+</div>
 
-                    .prev:hover,
-                    .next:hover {
-                        background-color: rgba(44, 62, 80, 0.8); /* Semi-transparent dark blue-gray */
-                        color: #ecf0f1;
-                    }
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
 
-                    .dot {
-                        cursor: pointer;
-                        height: 15px;
-                        width: 15px;
-                        margin: 0 2px;
-                        background-color: #bbb;
-                        border-radius: 50%;
-                        display: inline-block;
-                        transition: background-color 0.6s ease;
-                    }
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
 
-                    .dot.active,
-                    .dot:hover {
-                        background-color: #1abc9c; /* Green accent */
-                    }
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
 
-                    /* Contact section */
-                    h4 {
-                        color: #2c3e50;
-                        text-align: center;
-                    }
+ <style>
+     h3{
+         text-align:center;
+     }
+     p{
+         text-align:center; 
+     }
+     img{
+         margin-right:25px;
+         margin-left:10px;
 
-                    a i {
-                        margin: 10px;
-                    }
+     }
+    </style>
+  <section id="aboutme">
+<div class="intro">
+    <h3>Hey I Am AC </h3>
+    <p>Data </p>  
+    <img src="">
 
-                    .fa-linkedin-square {
-                        color: #0077b5;
-                    }
+    <img src="https://i.imghippo.com/files/Xxs2479LM.png?dl=0"height="200px" width="200px" align="center">
+    <marquee behavior="slide" direction="up"><p class="hee">&nbsp &nbsp I am passionate about designing something new! I have specialized in HTML5, CSS3 and JS.<br/>&nbspI am happy that i am responsible for implementing visual elements that users see & interact in a web application!</p></p></marquee>
 
-                    .fa-telegram {
-                        color: #0088cc;
-                    }
+</div>
 
-                    footer {
-                        text-align: center;
-                        font-size: 14px;
-                        color: #95a5a6; /* Light gray text for footer */
-                    }
-                </style>
-            </head>
-            <body>
-                <div id="mySidenav" class="sidenav">
-                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                    <a href="#aboutme">About Me</a><br />
-                    <a href="Technical Skills And Certification.html">Technical Skills And Certification</a><br />
-                    <a href="https://www.dropbox.com/s/0gwdcv1wk9ydhrk/CV_2020-06-13-091445.pdf?dl=0">Resume</a><br />
-                    <a href="#contact">Contact</a>
-                </div>
+ <br/>
 
-                <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
 
-                <script>
-                    function openNav() {
-                        document.getElementById("mySidenav").style.width = "250px";
-                    }
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
 
-                    function closeNav() {
-                        document.getElementById("mySidenav").style.width = "0";
-                    }
-                </script>
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
 
-                <section id="aboutme">
-                    <div class="intro">
-                        <h3>Hey I Am AC</h3>
-                        <p>Data</p>
-                        <img src="" />
-                        <img
-                            src="https://www.imghippo.com/i/Xxs2479LM.png?dl=0"
-                            height="200px"
-                            width="200px"
-                            align="center"
-                        />
-                        <marquee behavior="slide" direction="up">
-                            <p class="hee">
-                                I am passionate about designing something new! I have
-                                specialized in HTML5, CSS3 and JS.<br />I am happy that I am
-                                responsible for implementing visual elements that users see &
-                                interact in a web application!
-                            </p>
-                        </marquee>
-                    </div>
-                </section>
-            </body>
-        </html>
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+            background-color: #717171;
+        }
+
+        /* Hover state */
+        .dot:hover {
+            background-color: #717171;
+        }
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+</style>
+</head>
+
+<h2> What I Do?</h2>
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext"></div>
+  <img src="https://dl.dropbox.com/s/n2s9ls5dkmg8hyw/IMG_20200805_151127.jpg?dl=0" style="width:90%">
+  <div class="text"></div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext"></div>
+  <img src="https://dl.dropbox.com/s/nlfih96x0yk6cr4/IMG_20200805_151145.jpg?dl=0" style="width:90%">
+  <div class="text"></div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext"></div>
+  <img src="https://dl.dropbox.com/s/rhgtus13ili7bxy/IMG_20200805_155500.jpg?dl=0" style="width:90%">
+  <div class="text"></div>
+</div>
+
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}   
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none"; 
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block"; 
+  dots[slideIndex-1].className += " active";
+}
+</script>
+  <section id="contact">
+    <div class="hi">
+<h4>CONTACT</h4>
+<hr>
+<p>Want to chat with me related to work?
+</p>
+<p>Then write me an email at- ac@gmail.com</p>
+<h3>Otherwise</h3>
+<p>Let's be friend!</p>
+
+<head><div class="icon">
+<title>Font Awesome Icons</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body><ul>
+    <section>
+<a href="https://www.linkedin.com/in/ac/"><i class="fa fa-linkedin-square" style="font-size:48px;color:#0e76a8"></i></a> &nbsp
+&nbsp
+
+
+<a href="http://t.me/mrsky3000 "><i class="fa fa-telegram" style="font-size:48px;color: #0088cc"></i></a>
+    </section>
+
+    </ul>
+
+</section>
+
+<!-- END CONTACT SECTION -->
+
+<!-- START FOOTER SECTION -->
+<p align="center">
+Copyright &#169 2020 Rutuja Pagar.All rights reserved
+
+</p>
+</div>
+</div>
+</body>
+        </section>
+    </body>
+
+</section>
+
+
+
+</section><br /><br />
+
+
+
+</body>
+</html>
+
     </body>
 </html>
+0 commit comments
+Comments
+0
+ (0)
+
