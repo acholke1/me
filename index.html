@@ -1,135 +1,179 @@
-<style>
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f9; /* Light grey background for the body */
-    color: #333; /* Dark text for readability */
-}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Title</title>
+        <link rel="stylesheet" href="index.css" type="text/css" />
+    </head>
+    <body>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f5f5f5;
+                margin: 0;
+            }
 
-.sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    right: 0;
-    background-color: #1a1a2e; /* Deep navy for contrast */
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-}
+            .sidenav {
+                height: 100%;
+                width: 0;
+                position: fixed;
+                z-index: 1;
+                top: 0;
+                right: 0;
+                background-color: #1a1a2e;
+                overflow-x: hidden;
+                transition: 0.5s;
+                padding-top: 60px;
+            }
 
-.sidenav a {
-    background-color: #16213e; /* Darker navy for hover */
-    text-align: center;
-    padding: 10px 15px;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    color: #e94560; /* Light red for contrast */
-    display: block;
-    transition: 0.3s;
-}
+            .sidenav a {
+                background-color: #162447;
+                text-align: center;
+                padding: 8px 8px 8px 32px;
+                text-decoration: none;
+                font-size: 18px;
+                color: #fff;
+                font-weight: bold;
+                display: block;
+                transition: 0.3s;
+                border-radius: 5px;
+                margin: 5px;
+            }
 
-.sidenav a:hover {
-    color: #f5f5f5; /* Subtle hover effect */
-    background-color: #0f3460;
-}
+            .sidenav a:hover {
+                background-color: #0f3460;
+            }
 
-.sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    color: #e94560; /* Consistent with links */
-}
+            .sidenav .closebtn {
+                position: absolute;
+                top: 0;
+                right: 25px;
+                font-size: 36px;
+                margin-left: 50px;
+                color: #fff;
+            }
 
-h2, h3, h4 {
-    text-align: center;
-    color: #1a1a2e; /* Matches the side navigation background */
-}
+            h3 {
+                text-align: center;
+                color: #1a1a2e;
+            }
 
-p {
-    text-align: center;
-    color: #555; /* Neutral grey for body text */
-}
+            p {
+                text-align: center;
+                color: #495057;
+            }
 
-img {
-    margin-right: 25px;
-    margin-left: 10px;
-    border: 2px solid #1a1a2e; /* Border for a polished look */
-}
+            img {
+                margin-right: 25px;
+                margin-left: 10px;
+            }
 
-.slideshow-container {
-    max-width: 1000px;
-    position: relative;
-    margin: auto;
-    background-color: #ffffff; /* White for clean contrast */
-    border: 1px solid #ddd;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
+            .slideshow-container {
+                max-width: 1000px;
+                position: relative;
+                margin: auto;
+                background-color: #ffffff;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                padding: 10px;
+            }
 
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: #ffffff; /* White for buttons */
-    font-weight: bold;
-    font-size: 18px;
-    background-color: #1a1a2e; /* Button background */
-    border-radius: 3px;
-    user-select: none;
-}
+            .prev, .next {
+                cursor: pointer;
+                position: absolute;
+                top: 50%;
+                width: auto;
+                padding: 16px;
+                margin-top: -22px;
+                color: #fff;
+                font-weight: bold;
+                font-size: 18px;
+                transition: 0.6s ease;
+                background-color: rgba(0, 0, 0, 0.5);
+                border-radius: 3px;
+                user-select: none;
+            }
 
-.prev:hover, .next:hover {
-    background-color: #e94560; /* Hover matches link hover */
-}
+            .prev:hover, .next:hover {
+                background-color: rgba(0, 0, 0, 0.8);
+            }
 
-.text {
-    color: #333; /* Subtle contrast on captions */
-    font-size: 14px;
-    padding: 8px 12px;
-    position: absolute;
-    bottom: 8px;
-    width: 100%;
-    text-align: center;
-}
+            .dot {
+                cursor: pointer;
+                height: 15px;
+                width: 15px;
+                margin: 0 2px;
+                background-color: #ccc;
+                border-radius: 50%;
+                display: inline-block;
+                transition: background-color 0.6s ease;
+            }
 
-.dot {
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb; /* Neutral dots */
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-}
+            .dot.active, .dot:hover {
+                background-color: #162447;
+            }
 
-.dot.active {
-    background-color: #1a1a2e; /* Matches the sidenav background */
-}
+            .fa {
+                margin: 0 10px;
+                color: #1a1a2e;
+            }
 
-.dot:hover {
-    background-color: #e94560; /* Matches link hover */
-}
+            .fa:hover {
+                color: #0f3460;
+            }
 
-a {
-    color: #e94560;
-    text-decoration: none;
-}
+            footer {
+                text-align: center;
+                padding: 10px;
+                background-color: #1a1a2e;
+                color: #fff;
+                font-size: 14px;
+            }
+        </style>
 
-a:hover {
-    color: #1a1a2e;
-    text-decoration: underline;
-}
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#aboutme">About Me</a><br />
+            <a href="Technical Skills And Certification.html">Technical Skills And Certification</a><br />
+            <a href="https://www.dropbox.com/s/0gwdcv1wk9ydhrk/CV_2020-06-13-091445.pdf?dl=0">Resume</a><br />
+            <a href="#contact">Contact</a>
+        </div>
 
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #1a1a2e;
-    color: #f5f5f5;
-}
-</style>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+
+        <script>
+            function openNav() {
+                document.getElementById("mySidenav").style.width = "250px";
+            }
+
+            function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+            }
+        </script>
+
+        <section id="aboutme">
+            <h3>Hey I Am AC</h3>
+            <p>Data</p>
+            <img src="https://www.imghippo.com/i/Xxs2479LM.png?dl=0" height="200px" width="200px" align="center">
+            <marquee behavior="slide" direction="up">
+                <p>I am passionate about designing something new! I specialize in HTML5, CSS3, and JS. I am happy to be responsible for implementing visual elements that users see & interact with in a web application!</p>
+            </marquee>
+        </section>
+
+        <div class="slideshow-container">
+            <!-- Slides go here -->
+        </div>
+
+        <section id="contact">
+            <h4>Contact</h4>
+            <hr>
+            <p>Want to chat with me related to work?</p>
+            <p>Then write me an email at - ac@gmail.com</p>
+            <a href="https://www.linkedin.com/in/ac/"><i class="fa fa-linkedin-square" style="font-size:48px;"></i></a>
+            <a href="http://t.me/mrsky3000"><i class="fa fa-telegram" style="font-size:48px;"></i></a>
+        </section>
+
+        <footer>
+            Copyright &#169; 2024 AC. All rights reserved.
+        </footer>
+    </body>
+</html>
