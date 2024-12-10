@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Technical Specifications</title>
+    <link rel="stylesheet" href="index.css" type="text/css">
+    <style>
+        /* General body styling */
+        body {
+            font-family: Verdana, sans-serif;
+            margin: 0;
+            background-color: #F4F4F4; /* Light gray */
+        }
+
+        /* Sidenav styling */
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            background-color: #2C3E50; /* Dark blue-gray */
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidenav a {
+            background-color: #2C3E50;
+            text-align: center;
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            color: rgb(247, 244, 244);
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidenav a:hover {
+            color: #3498DB; /* Vibrant blue for hover effect */
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+            .sidenav a {
+                font-size: 18px;
+            }
+        }
+
+        /* Main section */
+        section {
+            padding: 20px;
+        }
+
+        h1, h2 {
+            color: #2C3E50; /* Dark blue-gray */
+            text-align: center;
+        }
+
+        h3 {
+            text-align: center;
+            color: #333333; /* Dark gray for section titles */
+        }
+
+        p {
+            text-align: center;
+            color: #333333; /* Dark gray for text */
+        }
+
+        .skills-list {
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .skills-list ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .skills-list li {
+            display: inline-block;
+            margin: 10px;
+            background-color: #ECF0F1; /* Light gray */
+            color: #2C3E50;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .skills-list li:hover {
+            background-color: #3498DB; /* Hover effect for skills */
+            color: #FFFFFF;
+        }
+
+        /* Slideshow */
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: #2C3E50;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .text {
+            color: #ffffff;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active {
+            background-color: #717171;
+        }
+
+        .dot:hover {
+            background-color: #717171;
+        }
+
+        .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.5s;
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @-webkit-keyframes fade {
+            from {opacity: .4}
+            to {opacity: 1}
+        }
+
+        @keyframes fade {
+            from {opacity: .4}
+            to {opacity: 1}
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2C3E50;
+            color: #ECF0F1;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidenav Menu -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#aboutme">About Me</a>
+        <a href="#skills">Technical Skills & Certifications</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <!-- Button to open the Sidenav -->
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+
+    <!-- Main Content -->
+    <section id="aboutme">
+        <h1>Technical Specifications</h1>
+        <div class="intro">
+            <h3>Data Engineer with Expertise in Apache Airflow, GCP, and Azure Databricks</h3>
+            <p>I am a Data Engineer with a proven track record of designing, building, and optimizing data pipelines using Apache Airflow, Google Cloud Platform (GCP) services, and Azure Databricks. I am dedicated to leveraging my technical proficiency to enable data-driven decision-making and deliver impactful solutions for complex data challenges.</p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Technical Skills & Certifications</h2>
+        <div class="skills-list">
+            <h3>Skills:</h3>
+            <ul>
+                <li>Apache Airflow</li>
+                <li>GCP Data Services</li>
+                <li>Azure Databricks</li>
+                <li>AWS S3</li>
+            </ul>
+
+            <h3>Data Tools & Technologies:</h3>
+            <ul>
+                <li>Teradata</li>
+                <li>IBM DataStage</li>
+                <li>Python</li>
+                <li>PySpark</li>
+                <li>SQL</li>
+            </ul>
+
+            <h3>Version Control & CI/CD:</h3>
+            <ul>
+                <li>GitHub</li>
+                <li>Bitbucket</li>
+                <li>Jenkins</li>
+                <li>Concord (Walmart)</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Technical Specifications. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
