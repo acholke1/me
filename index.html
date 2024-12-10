@@ -5,175 +5,197 @@
         <link rel="stylesheet" href="index.css" type="text/css" />
     </head>
     <body>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                background-color: #f5f5f5;
-                margin: 0;
-            }
+        <!DOCTYPE html>
+        <html>
+            <head>
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <style>
+                    section {
+                        text-align: center;
+                    }
 
-            .sidenav {
-                height: 100%;
-                width: 0;
-                position: fixed;
-                z-index: 1;
-                top: 0;
-                right: 0;
-                background-color: #1a1a2e;
-                overflow-x: hidden;
-                transition: 0.5s;
-                padding-top: 60px;
-            }
+                    body {
+                        font-family: "Blippo", fantasy;
+                        background-color: #f5f5f5; /* Light gray for a clean background */
+                        color: #333; /* Dark gray for text */
+                    }
 
-            .sidenav a {
-                background-color: #162447;
-                text-align: center;
-                padding: 8px 8px 8px 32px;
-                text-decoration: none;
-                font-size: 18px;
-                color: #fff;
-                font-weight: bold;
-                display: block;
-                transition: 0.3s;
-                border-radius: 5px;
-                margin: 5px;
-            }
+                    .sidenav {
+                        height: 100%;
+                        width: 0;
+                        position: fixed;
+                        z-index: 1;
+                        top: 0;
+                        right: 0;
+                        background-color: #2c3e50; /* Dark blue-gray */
+                        overflow-x: hidden;
+                        transition: 0.5s;
+                        padding-top: 60px;
+                    }
 
-            .sidenav a:hover {
-                background-color: #0f3460;
-            }
+                    .sidenav a {
+                        background-color: #34495e; /* Medium blue-gray */
+                        text-align: center;
+                        padding: 12px 12px 12px 32px;
+                        text-decoration: none;
+                        font-size: 20px;
+                        font-weight: bold;
+                        color: #ecf0f1; /* Off-white for text */
+                        display: block;
+                        transition: 0.3s;
+                        border-radius: 4px;
+                        margin: 4px 0; /* Spacing between links */
+                    }
 
-            .sidenav .closebtn {
-                position: absolute;
-                top: 0;
-                right: 25px;
-                font-size: 36px;
-                margin-left: 50px;
-                color: #fff;
-            }
+                    .sidenav a:hover {
+                        color: #1abc9c; /* Green accent color */
+                    }
 
-            h3 {
-                text-align: center;
-                color: #1a1a2e;
-            }
+                    .sidenav .closebtn {
+                        position: absolute;
+                        top: 0;
+                        right: 25px;
+                        font-size: 36px;
+                        color: #ecf0f1;
+                        margin-left: 50px;
+                    }
 
-            p {
-                text-align: center;
-                color: #495057;
-            }
+                    @media screen and (max-height: 450px) {
+                        .sidenav {
+                            padding-top: 15px;
+                        }
+                        .sidenav a {
+                            font-size: 18px;
+                        }
+                    }
 
-            img {
-                margin-right: 25px;
-                margin-left: 10px;
-            }
+                    h3 {
+                        text-align: center;
+                    }
 
-            .slideshow-container {
-                max-width: 1000px;
-                position: relative;
-                margin: auto;
-                background-color: #ffffff;
-                border: 1px solid #ddd;
-                border-radius: 8px;
-                padding: 10px;
-            }
+                    p {
+                        text-align: center;
+                    }
 
-            .prev, .next {
-                cursor: pointer;
-                position: absolute;
-                top: 50%;
-                width: auto;
-                padding: 16px;
-                margin-top: -22px;
-                color: #fff;
-                font-weight: bold;
-                font-size: 18px;
-                transition: 0.6s ease;
-                background-color: rgba(0, 0, 0, 0.5);
-                border-radius: 3px;
-                user-select: none;
-            }
+                    img {
+                        margin-right: 25px;
+                        margin-left: 10px;
+                    }
 
-            .prev:hover, .next:hover {
-                background-color: rgba(0, 0, 0, 0.8);
-            }
+                    /* Slideshow styling */
+                    .slideshow-container {
+                        max-width: 1000px;
+                        position: relative;
+                        margin: auto;
+                    }
 
-            .dot {
-                cursor: pointer;
-                height: 15px;
-                width: 15px;
-                margin: 0 2px;
-                background-color: #ccc;
-                border-radius: 50%;
-                display: inline-block;
-                transition: background-color 0.6s ease;
-            }
+                    .prev,
+                    .next {
+                        cursor: pointer;
+                        position: absolute;
+                        top: 50%;
+                        width: auto;
+                        padding: 16px;
+                        margin-top: -22px;
+                        color: #2c3e50;
+                        font-weight: bold;
+                        font-size: 18px;
+                        transition: 0.6s ease;
+                        border-radius: 0 3px 3px 0;
+                        user-select: none;
+                        background-color: rgba(236, 240, 241, 0.8); /* Semi-transparent white */
+                    }
 
-            .dot.active, .dot:hover {
-                background-color: #162447;
-            }
+                    .prev:hover,
+                    .next:hover {
+                        background-color: rgba(44, 62, 80, 0.8); /* Semi-transparent dark blue-gray */
+                        color: #ecf0f1;
+                    }
 
-            .fa {
-                margin: 0 10px;
-                color: #1a1a2e;
-            }
+                    .dot {
+                        cursor: pointer;
+                        height: 15px;
+                        width: 15px;
+                        margin: 0 2px;
+                        background-color: #bbb;
+                        border-radius: 50%;
+                        display: inline-block;
+                        transition: background-color 0.6s ease;
+                    }
 
-            .fa:hover {
-                color: #0f3460;
-            }
+                    .dot.active,
+                    .dot:hover {
+                        background-color: #1abc9c; /* Green accent */
+                    }
 
-            footer {
-                text-align: center;
-                padding: 10px;
-                background-color: #1a1a2e;
-                color: #fff;
-                font-size: 14px;
-            }
-        </style>
+                    /* Contact section */
+                    h4 {
+                        color: #2c3e50;
+                        text-align: center;
+                    }
 
-        <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="#aboutme">About Me</a><br />
-            <a href="Technical Skills And Certification.html">Technical Skills And Certification</a><br />
-            <a href="https://www.dropbox.com/s/0gwdcv1wk9ydhrk/CV_2020-06-13-091445.pdf?dl=0">Resume</a><br />
-            <a href="#contact">Contact</a>
-        </div>
+                    a i {
+                        margin: 10px;
+                    }
 
-        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+                    .fa-linkedin-square {
+                        color: #0077b5;
+                    }
 
-        <script>
-            function openNav() {
-                document.getElementById("mySidenav").style.width = "250px";
-            }
+                    .fa-telegram {
+                        color: #0088cc;
+                    }
 
-            function closeNav() {
-                document.getElementById("mySidenav").style.width = "0";
-            }
-        </script>
+                    footer {
+                        text-align: center;
+                        font-size: 14px;
+                        color: #95a5a6; /* Light gray text for footer */
+                    }
+                </style>
+            </head>
+            <body>
+                <div id="mySidenav" class="sidenav">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <a href="#aboutme">About Me</a><br />
+                    <a href="Technical Skills And Certification.html">Technical Skills And Certification</a><br />
+                    <a href="https://www.dropbox.com/s/0gwdcv1wk9ydhrk/CV_2020-06-13-091445.pdf?dl=0">Resume</a><br />
+                    <a href="#contact">Contact</a>
+                </div>
 
-        <section id="aboutme">
-            <h3>Hey I Am AC</h3>
-            <p>Data</p>
-            <img src="https://www.imghippo.com/i/Xxs2479LM.png?dl=0" height="200px" width="200px" align="center">
-            <marquee behavior="slide" direction="up">
-                <p>I am passionate about designing something new! I specialize in HTML5, CSS3, and JS. I am happy to be responsible for implementing visual elements that users see & interact with in a web application!</p>
-            </marquee>
-        </section>
+                <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
 
-        <div class="slideshow-container">
-            <!-- Slides go here -->
-        </div>
+                <script>
+                    function openNav() {
+                        document.getElementById("mySidenav").style.width = "250px";
+                    }
 
-        <section id="contact">
-            <h4>Contact</h4>
-            <hr>
-            <p>Want to chat with me related to work?</p>
-            <p>Then write me an email at - ac@gmail.com</p>
-            <a href="https://www.linkedin.com/in/ac/"><i class="fa fa-linkedin-square" style="font-size:48px;"></i></a>
-            <a href="http://t.me/mrsky3000"><i class="fa fa-telegram" style="font-size:48px;"></i></a>
-        </section>
+                    function closeNav() {
+                        document.getElementById("mySidenav").style.width = "0";
+                    }
+                </script>
 
-        <footer>
-            Copyright &#169; 2024 AC. All rights reserved.
-        </footer>
+                <section id="aboutme">
+                    <div class="intro">
+                        <h3>Hey I Am AC</h3>
+                        <p>Data</p>
+                        <img src="" />
+                        <img
+                            src="https://www.imghippo.com/i/Xxs2479LM.png?dl=0"
+                            height="200px"
+                            width="200px"
+                            align="center"
+                        />
+                        <marquee behavior="slide" direction="up">
+                            <p class="hee">
+                                I am passionate about designing something new! I have
+                                specialized in HTML5, CSS3 and JS.<br />I am happy that I am
+                                responsible for implementing visual elements that users see &
+                                interact in a web application!
+                            </p>
+                        </marquee>
+                    </div>
+                </section>
+            </body>
+        </html>
     </body>
 </html>
