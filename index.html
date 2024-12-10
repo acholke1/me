@@ -1,335 +1,135 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Page Title</title>
-        <link rel= 'stylesheet'   href="index.css" type='text'/>
-    </head>
-    <body>
-        <!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-    
-    section{text-align:center;
-    }
-    
 body {
-font-family: Blippo, fantasy;
- 
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9; /* Light grey background for the body */
+    color: #333; /* Dark text for readability */
 }
 
 .sidenav {
-
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  right: 0;
-  background-color:#FEEADC ;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #1a1a2e; /* Deep navy for contrast */
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
 }
 
 .sidenav a {
-Background-color:#f1f1f1;
-Text-align:center;
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 20px;
-  Font-weight:bold;
-  color: black;
-  display: block;
-  transition: 0.3s;
+    background-color: #16213e; /* Darker navy for hover */
+    text-align: center;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #e94560; /* Light red for contrast */
+    display: block;
+    transition: 0.3s;
 }
 
 .sidenav a:hover {
-  color:grey;
+    color: #f5f5f5; /* Subtle hover effect */
+    background-color: #0f3460;
 }
 
 .sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    color: #e94560; /* Consistent with links */
 }
 
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
-</style>
-</head>
-<body>
-
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="#aboutme">About Me</a><br />
-  <a href="Technical Skills And Certification.html">Technical Skills And Certification</a><br />
-  <a href="https://www.dropbox.com/s/0gwdcv1wk9ydhrk/CV_2020-06-13-091445.pdf?dl=0">Resume</a><br />
-  <a href="#contact">Contact</a>
-   
-</div>
-
-<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
-
-<script>
-function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
+h2, h3, h4 {
+    text-align: center;
+    color: #1a1a2e; /* Matches the side navigation background */
 }
 
-function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
+p {
+    text-align: center;
+    color: #555; /* Neutral grey for body text */
 }
-</script>
- 
- <style>
-     h3{
-         text-align:center;
-     }
-     p{
-         text-align:center; 
-     }
-     img{
-         margin-right:25px;
-         margin-left:10px;
-          
-     }
-    </style>
-  <section id="aboutme">
-<div class="intro">
-    <h3>Hey I Am AC </h3>
-    <p>Data </p>  
-    <img src="">
-   
-    <img src="https://i.imghippo.com/files/Xxs2479LM.png?dl=0"height="200px" width="200px" align="center">
-    <marquee behavior="slide" direction="up"><p class="hee">&nbsp &nbsp I am passionate about designing something new! I have specialized in HTML5, CSS3 and JS.<br/>&nbspI am happy that i am responsible for implementing visual elements that users see & interact in a web application!</p></p></marquee>
 
-</div>
- 
- <br/>
-      
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {box-sizing: border-box}
-body {font-family: Verdana, sans-serif; margin:0}
-.mySlides {display: none}
-img {vertical-align: middle;}
+img {
+    margin-right: 25px;
+    margin-left: 10px;
+    border: 2px solid #1a1a2e; /* Border for a polished look */
+}
 
-/* Slideshow container */
 .slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+    background-color: #ffffff; /* White for clean contrast */
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Next & previous buttons */
 .prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: #ffffff; /* White for buttons */
+    font-weight: bold;
+    font-size: 18px;
+    background-color: #1a1a2e; /* Button background */
+    border-radius: 3px;
+    user-select: none;
 }
 
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+    background-color: #e94560; /* Hover matches link hover */
 }
 
-/* Caption text */
 .text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
+    color: #333; /* Subtle contrast on captions */
+    font-size: 14px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
 }
 
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-/* The dots/bullets/indicators */
 .dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb; /* Neutral dots */
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
 }
 
-.active {
-            background-color: #717171;
-        }
-
-        /* Hover state */
-        .dot:hover {
-            background-color: #717171;
-        }
-
-/* Fading animation */
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
+.dot.active {
+    background-color: #1a1a2e; /* Matches the sidenav background */
 }
 
-@-webkit-keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+.dot:hover {
+    background-color: #e94560; /* Matches link hover */
 }
 
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+a {
+    color: #e94560;
+    text-decoration: none;
 }
 
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .prev, .next,.text {font-size: 11px}
+a:hover {
+    color: #1a1a2e;
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #1a1a2e;
+    color: #f5f5f5;
 }
 </style>
-</head>
-
-<h2> What I Do?</h2>
-<div class="slideshow-container">
-
-<div class="mySlides fade">
-  <div class="numbertext"></div>
-  <img src="https://dl.dropbox.com/s/n2s9ls5dkmg8hyw/IMG_20200805_151127.jpg?dl=0" style="width:90%">
-  <div class="text"></div>
-</div>
-
-<div class="mySlides fade">
-  <div class="numbertext"></div>
-  <img src="https://dl.dropbox.com/s/nlfih96x0yk6cr4/IMG_20200805_151145.jpg?dl=0" style="width:90%">
-  <div class="text"></div>
-</div>
-
-<div class="mySlides fade">
-  <div class="numbertext"></div>
-  <img src="https://dl.dropbox.com/s/rhgtus13ili7bxy/IMG_20200805_155500.jpg?dl=0" style="width:90%">
-  <div class="text"></div>
-</div>
-    
-<a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-</div>
-<br>
-
-<div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span>
-  <span class="dot" onclick="currentSlide(2)"></span>
-  <span class="dot" onclick="currentSlide(3)"></span>
-</div>
-
-<script>
-var slideIndex = 1;
-showSlides(slideIndex);
-
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}   
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none"; 
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block"; 
-  dots[slideIndex-1].className += " active";
-}
-</script>
-  <section id="contact">
-    <div class="hi">
-<h4>CONTACT</h4>
-<hr>
-<p>Want to chat with me related to work?
-</p>
-<p>Then write me an email at- ac@gmail.com</p>
-<h3>Otherwise</h3>
-<p>Let's be friend!</p>
-
-<head><div class="icon">
-<title>Font Awesome Icons</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body><ul>
-    <section>
-<a href="https://www.linkedin.com/in/ac/"><i class="fa fa-linkedin-square" style="font-size:48px;color:#0e76a8"></i></a> &nbsp
-&nbsp
-
-
-<a href="http://t.me/mrsky3000 "><i class="fa fa-telegram" style="font-size:48px;color: #0088cc"></i></a>
-    </section>
-
-    </ul>
- 
-</section>
-
-<!-- END CONTACT SECTION -->
-
-<!-- START FOOTER SECTION -->
-<p align="center">
-Copyright &#169 2020 Rutuja Pagar.All rights reserved
-
-</p>
-</div>
-</div>
-</body>
-        </section>
-    </body>
-   
-</section>
-
-   
-   
-</section><br /><br />
-
- 
- 
-</body>
-</html>
-
-    </body>
-</html>
