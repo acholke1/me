@@ -1,21 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+    <head>
+        <title>Page Title</title>
+    </head>
+    <body>
+        <!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Title</title>
+    </head>
+    <body>
+        <!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Page Title</title>
-    <link rel="stylesheet" href="index.css" type="text/css">
-    <style>
-        body {
-            font-family: 'Blippo', fantasy;
-            margin: 0;
-        }
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+font-family: Blippo, fantasy;
+ 
+}
         /* Side navigation styles */
         .sidenav {
             height: 100%;
             width: 0;
             position: fixed;
+            z-index: 1;
             top: 0;
             right: 0;
             background-color: #2C3E50; /* Dark blue-gray */
@@ -25,14 +34,15 @@
         }
 
         .sidenav a {
-            padding: 8px 32px;
+            Background-color:;
+            Text-align:center;
+            padding: 8px 8px 8px 32px;
             text-decoration: none;
             font-size: 20px;
-            font-weight: bold;
+            Font-weight:bold;
             color: rgb(247, 244, 244);
             display: block;
             transition: 0.3s;
-            text-align: center;
         }
 
         .sidenav a:hover {
@@ -52,27 +62,50 @@
             .sidenav a { font-size: 18px; }
         }
 
-        /* Section styles */
-        section {
-            text-align: center;
-            padding: 20px;
-        }
+      </style>
+</head>
+<body>
 
-        /* Slideshow styles */
-        .slideshow-container {
-            max-width: 1000px;
-            position: relative;
-            margin: auto;
-        }
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="index.html">About Me</a><br />
+  <a href="Technical Skills And Certification.html">Technical Skills And Certification</a><br />
+  <a href="My Projects.html">My Projects</a><br />
+  <a href="https://dl.dropbox.com/s/0gwdcv1wk9ydhrk/CV_2020-06-13-091445.pdf?dl=0">Resume</a><br />
+  <a href="index.html">Contact</a>
+   
+</div>
 
-        .mySlides {
-            display: none;
-        }
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
 
-        img {
-            vertical-align: middle;
-            width: 90%;
-        }
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+ 
+ 
+  <section id="aboutme">
+
+</div>
+  <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
 
         /* Buttons (previous/next) */
         .prev, .next {
@@ -151,121 +184,100 @@
         }
     </style>
 </head>
-<body>
 
-<!-- Side navigation menu -->
-<div id="mySidenav" class="sidenav">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="#aboutme">About Me</a><br />
-    <a href="Technical Skills And Certification.html">Technical Skills And Certification</a><br />
-    <a href="#contact">Contact</a>
-</div>
-
-<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
-
-<!-- JavaScript for the side navigation -->
-<script>
-    function openNav() {
-        document.getElementById("mySidenav").style.width = "250px";
-    }
-
-    function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-    }
 </script>
-
-<!-- About Me Section -->
-<section id="aboutme">
-    <div class="intro">
-        <h3>Hey, I am AC</h3>
-        <p>Data</p>
-        <img src="https://i.imghippo.com/files/Xxs2479LM.png?dl=0" height="200px" width="200px">
-        <marquee behavior="slide" direction="up">
-            <p>I’m driven by the power of data to drive decisions! I design efficient data pipelines and create dynamic dashboards for impactful business results.</p>
-        </marquee>
-    </div>
-
-    <h2>What I Do?</h2>
-
-    <!-- Slideshow -->
-    <div class="slideshow-container">
-        <div class="mySlides fade">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvdpg-XaPUMGSj36Z7YqU-lLNe4mLVM3eZKX2LkHH00YjdfHK9Bb2GuzPuK7rTj1_Hkvs&usqp=CAU?dl=0" alt="Image 1">
-        </div>
-        <div class="mySlides fade">
-            <img src="https://media.licdn.com/dms/image/v2/D5612AQGlOzeJt09DaQ/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1689237554062?e=2147483647&v=beta&t=hhrhmnGw6m5gfEUrm2bxm3XHu3b2wR5Q58S2HD9QeSc?dl=0" alt="Image 2">
-        </div>
-        <!-- Add more images here -->
-    </div>
+ 
+<section id="contact">
+ 
 </section>
+
+</p>
+</div>
+</div>
+</body>
+      </section>
+  </body>
+ 
+</section>
+<style>
+body{
+    color:white;
+        Background-color:rgb(246, 238, 238);
+    }
+    h4{
+        Text-align:center;
+    }
+        table{
+        color:black;
+            Font-weight:bold;
+            Background-color:snow;
+        }
+        img{
+            align:center;
+        }
+        p{
+            Text-align:center;
+        }
+        h3{background-color:;
+        Font-color:white;
+            Text-align:center;
+        }
+        .tech{color:black;
+            background-color:#FADBD8;
+        }
+        #certification{
+            Text-align:center;
+        }
     </style>
-</head>
-<body>
-
-    <!-- Sidenav Menu -->
-    <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="#aboutme">About Me</a>
-        <a href="#skills">Technical Skills & Certifications</a>
-        <a href="#contact">Contact</a>
+    <body>
+        <section id="skills">
+         
+   </body>
+    <div class="tech"><br />
+          <h3>Technical Skills </h3>
+<p>&nbsp&nbspI write clean and organized markup that &nbsp &nbspeliminates excess code and allows others to easily understand and therefor to update the content in the future.</p>
+<br/>
+<h4>Specialization :</h4>
+<p>&nbsp&nbspAlong with front-end web development i have good experience of wordpress and wix for web design .</p>
+        <br/><br/>
     </div>
+    <br /><br />
+    <img src="https://dl.dropbox.com/s/vt4evw72wycuhtu/IMG_20200820_184454.jpg?dl=0"height="300px" width= "350px"><br /><br />
+    <hr>
+    <h3>Certifications</h3>
+    <section id="certification">
+          Responsive web design has become more important as the amount of mobile traffic now accounts for more than half of total internet traffic!<br /><br />
+         
+<img src="https://dl.dropbox.com/s/lj005cbvvix73wb/Freecodecaml.jpg?dl=0"height="300px" width= "300px" align="center">
 
-    <!-- Button to open the Sidenav -->
-    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+<br /><br /><hr><br />
+           The Google Ads certification is a professional accreditation that Google offers to individuals who demonstrate proficiency in basic and advanced aspects of Google Ads.
+Google search ads course taught me how to increase web traffic using Google search!
+<br /><br /><br />
+            <img src="https://dl.dropbox.com/s/nvuy66tivin9swv/IMG_20200804_184909.jpg?dl=0"height="300px" width= "300px" >
+           
+            <br />
+            <br /><hr><br />
+            This course helped me to explore the working relationship between humans and machines using AI. I found this course very useful in regards to how different technologies brought together! <br /><br />
+            <img src="https://dl.dropbox.com/s/8i45bv8zrrdlfsz/IMG_20200804_185259.jpg?dl=0"height="300px" width= "300px">
+        </section>
+       
+</div>
+    </body>
+</html>
+</div>
+    </body>
+</html>
+   
+</section><br /><br />
 
-    <script>
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
-        }
-
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-        }
-    </script>
-
-    <!-- Main Content -->
-    <section id="aboutme">
-        <h1>Technical Specifications</h1>
-        <div class="intro">
-            <h3>Data Engineer with Expertise in Apache Airflow, GCP, and Azure Databricks</h3>
-            <p>I am a Data Engineer with a proven track record of designing, building, and optimizing data pipelines using Apache Airflow, Google Cloud Platform (GCP) services, and Azure Databricks. I am dedicated to leveraging my technical proficiency to enable data-driven decision-making and deliver impactful solutions for complex data challenges.</p>
-        </div>
-    </section>
-
-    <section id="skills">
-        <h2>Technical Skills & Certifications</h2>
-        <div class="skills-list">
-            <h3>Skills:</h3>
-            <ul>
-                <li>Apache Airflow</li>
-                <li>GCP Data Services</li>
-                <li>Azure Databricks</li>
-                <li>AWS S3</li>
-            </ul>
-
-            <h3>Data Tools & Technologies:</h3>
-            <ul>
-                <li>Teradata</li>
-                <li>IBM DataStage</li>
-                <li>Python</li>
-                <li>PySpark</li>
-                <li>SQL</li>
-            </ul>
-
-            <h3>Version Control & CI/CD:</h3>
-            <ul>
-                <li>GitHub</li>
-                <li>Bitbucket</li>
-                <li>Jenkins</li>
-                <li>Concord (Walmart)</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Technical Specifications. All Rights Reserved.</p>
-    </footer>
-
+ 
+ 
 </body>
 </html>
+
+    </body>
+</html>
+    </body>
+</html>
+
