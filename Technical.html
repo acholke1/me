@@ -75,7 +75,7 @@
     <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
       <a href="index.html">About Me</a><br />
-      <a href="Technical Skills">Technical Skills</a><br />
+      <a href="Technical">Technical</a><br />
       <a href="Certifications.html">Certifications</a><br />
       <a href="index.html">Contact</a>
 
@@ -258,10 +258,7 @@
             margin: 0;
             color: white;
             background-color: black;
-            height: 100vh; /* Full viewport height */
-            display: flex;
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically */
+            padding-left: 40px; /* Keep some padding for the menu icon */
         }
 
         h4 {
@@ -304,6 +301,7 @@
             opacity: 0;
             animation: fadeIn 2s forwards;
             text-align: center; /* Center the text within the section */
+            margin-top: 100px; /* Add some space from top for better appearance */
         }
 
         /* Flexbox to center the skill items */
@@ -416,10 +414,22 @@
             text-align: center;
             font-size: 2em;
         }
+
+        /* Menu Icon Positioning */
+        .menu-icon {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            cursor: pointer;
+        }
     </style>
 </head>
 
 <body>
+
+    <!-- Menu icon (left-top corner) -->
+    <div class="menu-icon">&#9776;</div>
 
     <section class="content">
         <h1>S U M M A R Y</h1>
@@ -446,4 +456,3 @@
 </body>
 
 </html>
-
