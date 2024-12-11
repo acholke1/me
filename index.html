@@ -7,468 +7,155 @@
 </head>
 
 <body>
-  <!DOCTYPE html>
-  <html>
+  <div id="firecrackerText" class="firecracker">
+    <span>Hey Folk!</span>
+  </div>
 
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-      section {
-        text-align: center;
-      }
+  <script>
+    // Display the firecracker text for 5 seconds after page load
+    window.onload = function() {
+      setTimeout(function() {
+        document.getElementById("firecrackerText").style.display = "none";
+      }, 5000);  // Hide after 5 seconds
+    };
+  </script>
 
-      body {
-        font-family: Blippo, fantasy;
+  <style>
+    /* Firecracker animation */
+    @keyframes firecrackerEffect {
+      0% { transform: scale(1); opacity: 1; }
+      25% { transform: scale(1.1); opacity: 0.8; }
+      50% { transform: scale(1.2); opacity: 0.6; }
+      75% { transform: scale(1.1); opacity: 0.8; }
+      100% { transform: scale(1); opacity: 1; }
+    }
 
-      }
+    /* Style for the firecracker text */
+    .firecracker {
+      position: fixed;
+      left: 0;
+      top: 10%;
+      font-size: 24px;
+      font-weight: bold;
+      color: orange;
+      animation: firecrackerEffect 1s infinite;
+      z-index: 9999;
+      display: block;
+    }
 
-      .sidenav {
+    .firecracker span {
+      color: #ff6347;  /* Tomato color for a more vibrant look */
+      text-shadow: 0 0 10px rgba(255, 0, 0, 0.7), 0 0 20px rgba(255, 165, 0, 0.6); /* Fire effect */
+    }
+  </style>
 
-        height: 100%;
-        width: 0;
-        position: fixed;
-        z-index: 1;
-        top: 0;
-        right: 0;
-        background-color: #2C3E50;
-        /* Dark blue-gray */
-        overflow-x: hidden;
-        transition: 0.5s;
-        padding-top: 60px;
-      }
+  <!-- Your existing content starts here -->
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#aboutme">About Me</a><br />
+    <a href="Technical.html">Technical</a><br />
+    <a href="Certifications.html">Certifications</a><br />
+    <a href="index.html">Contact</a>
+  </div>
 
-      .sidenav a {
-        Background-color: #2C3E50;
-        Text-align: center;
-        padding: 8px 8px 8px 32px;
-        text-decoration: none;
-        font-size: 20px;
-        Font-weight: bold;
-        color: rgb(247, 244, 244);
-        display: block;
-        transition: 0.3s;
-      }
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
 
-      .sidenav a:hover {
-        color: #3498DB;
-        /* Vibrant blue for hover effect */
-      }
+  <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+    }
 
-      .sidenav .closebtn {
-        position: absolute;
-        top: 0;
-        right: 25px;
-        font-size: 36px;
-        margin-left: 50px;
-      }
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+  </script>
 
-      @media screen and (max-height: 450px) {
-        .sidenav {
-          padding-top: 15px;
-        }
-
-        .sidenav a {
-          font-size: 18px;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-
-    <div id="mySidenav" class="sidenav">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <a href="#aboutme">About Me</a><br />
-      <a href="Technical.html">Technical</a><br />
-      <a href="Certifications.html">Certifications</a><br />
-      <a href="index.html">Contact</a>
-
+  <section id="aboutme">
+    <div class="intro">
+      <h3>Hey I Am Akash</h3>
+      <p>Data Engineer</p>
+      <img src="">
+      <img src="https://i.imghippo.com/files/Xxs2479LM.png?dl=0" height="200px" width="200px" align="center">
+      <marquee behavior="slide" direction="up">
+        <p class="hee" style="line-height: 1.8; margin-bottom: 20px;">
+          <strong>Dream It. Design It. Deliver It.</strong><br /><br />
+          Data is not just numbers – it’s the power to make smarter decisions, fuel business growth, and unlock new
+          possibilities.<br /><br />
+          As a Data Engineer, I’m on a mission to transform raw data into actionable insights. With every pipeline I
+          build and every dashboard I design, I aim to bridge the gap between complex data and clear, impactful
+          decisions.
+        </p>
+      </marquee>
     </div>
 
+    <h2> What I Do?</h2>
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <img src="https://i.imghippo.com/files/vSV1471sXA.jpg?dl=0" height="400px" width="900px" align="center">
+      </div>
+      <div class="mySlides fade">
+        <img src="https://i.imghippo.com/files/SUr2162Zyo.png?dl=0" height="400px" width="900px" align="center">
+      </div>
+      <div class="mySlides fade">
+        <img src="https://i.imghippo.com/files/tG7115zKY.png?dl=0" height="400px" width="900px" align="center">
+      </div>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
 
-    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
 
     <script>
-      function openNav() {
-        document.getElementById("mySidenav").style.width = "250px";
+      var slideIndex = 1;
+      showSlides(slideIndex);
+
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
       }
 
-      function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
       }
     </script>
 
-    <style>
-      h3 {
-        text-align: center;
-      }
+    <section id="contact">
+      <div class="hi">
+        <h4>CONTACT</h4>
+        <hr>
+        <p><strong>Ready to Transform Your Data into Insights?</strong></p>
+        <p>I believe that great data drives great decisions. Let's discuss how I can help you unlock the full
+          potential of your data. Feel free to <a href="mailto:akashcholke@gmail.com">email me</a> to get started.</p>
+        <h3>Otherwise</h3>
+        <p>Let's connect and chat!</p>
 
-      p {
-        text-align: center;
-      }
-
-      img {
-        margin-right: 25px;
-        margin-left: 10px;
-
-      }
-    </style>
-    <section id="aboutme">
-      <div class="intro">
-        <h3>Hey I Am Akash</h3>
-        <p>Data Engineer</p>
-        <img src="">
-
-        <img src="https://i.imghippo.com/files/Xxs2479LM.png?dl=0" height="200px" width="200px" align="center">
-        <marquee behavior="slide" direction="up">
-          <p class="hee" style="line-height: 1.8; margin-bottom: 20px;">
-            <strong>Dream It. Design It. Deliver It.</strong><br /><br />
-            Data is not just numbers – it’s the power to make smarter decisions, fuel business growth, and unlock new
-            possibilities.<br /><br />
-            As a Data Engineer, I’m on a mission to transform raw data into actionable insights. With every pipeline I
-            build and every dashboard I design, I aim to bridge the gap between complex data and clear, impactful
-            decisions.
-          </p>
-        </marquee>
-
-
-      </div>
-
-      <br />
-
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <style>
-        * {
-          box-sizing: border-box
-        }
-
-        body {
-          font-family: Verdana, sans-serif;
-          margin: 0
-        }
-
-        .mySlides {
-          display: none
-        }
-
-        img {
-          vertical-align: middle;
-        }
-
-        /* Slideshow container */
-        .slideshow-container {
-          max-width: 1000px;
-          position: relative;
-          margin: auto;
-        }
-
-        /* Next & previous buttons */
-        .prev,
-        .next {
-          cursor: pointer;
-          position: absolute;
-          top: 50%;
-          width: auto;
-          padding: 16px;
-          margin-top: -22px;
-          color: #2C3E50;
-          font-weight: bold;
-          font-size: 18px;
-          transition: 0.6s ease;
-          border-radius: 0 3px 3px 0;
-          user-select: none;
-        }
-
-        /* Position the "next button" to the right */
-        .next {
-          right: 0;
-          border-radius: 3px 0 0 3px;
-        }
-
-        /* On hover, add a black background color with a little bit see-through */
-        .prev:hover,
-        .next:hover {
-          background-color: rgba(0, 0, 0, 0.8);
-        }
-
-        /* Caption text */
-        .text {
-          color: #ffffff;
-          font-size: 15px;
-          padding: 8px 12px;
-          position: absolute;
-          bottom: 8px;
-          width: 100%;
-          text-align: center;
-        }
-
-        /* Number text (1/3 etc) */
-        .numbertext {
-          color: #f2f2f2;
-          font-size: 12px;
-          padding: 8px 12px;
-          position: absolute;
-          top: 0;
-        }
-
-        /* The dots/bullets/indicators */
-        .dot {
-          cursor: pointer;
-          height: 15px;
-          width: 15px;
-          margin: 0 2px;
-          background-color: #bbb;
-          border-radius: 50%;
-          display: inline-block;
-          transition: background-color 0.6s ease;
-        }
-
-        .active {
-          background-color: #717171;
-        }
-
-        /* Hover state */
-        .dot:hover {
-          background-color: #717171;
-        }
-
-        /* Fading animation */
-        .fade {
-          -webkit-animation-name: fade;
-          -webkit-animation-duration: 1.5s;
-          animation-name: fade;
-          animation-duration: 1.5s;
-        }
-
-        @-webkit-keyframes fade {
-          from {
-            opacity: .4
-          }
-
-          to {
-            opacity: 1
-          }
-        }
-
-        @keyframes fade {
-          from {
-            opacity: .4
-          }
-
-          to {
-            opacity: 1
-          }
-        }
-
-        /* On smaller screens, decrease text size */
-        @media only screen and (max-width: 300px) {
-
-          .prev,
-          .next,
-          .text {
-            font-size: 11px
-          }
-        }
-      </style>
-      </head>
-
-      <h2> What I Do?</h2>
-      <div class="slideshow-container">
-
-        <div class="mySlides fade">
-          <div class="numbertext"></div>
-          <img src="https://i.imghippo.com/files/vSV1471sXA.jpg?dl=0" height="400px" width="900px" align="center">
-          <div class="text"></div>
+        <div class="icon">
+          <a href="https://www.linkedin.com/in/akashcholke/"><i class="fa fa-linkedin-square" style="font-size:48px;color:#0e76a8"></i></a>
+          &nbsp;
+          <a href="http://t.me/mrsky3000"><i class="fa fa-telegram" style="font-size:48px;color: #0088cc"></i></a>
         </div>
-
-        <div class="mySlides fade">
-          <div class="numbertext"></div>
-          <img src="https://i.imghippo.com/files/SUr2162Zyo.png?dl=0" height="400px" width="900px" align="center">
-          <div class="text"></div>
-        </div>
-
-        <div class="mySlides fade">
-          <div class="numbertext"></div>
-          <img src="https://i.imghippo.com/files/tG7115zKY.png?dl=0" height="400px" width="900px" align="center">
-          <div class="text"></div>
-        </div>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
       </div>
-      <br>
+    </section>
 
-      <div style="text-align:center">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-      </div>
-
-      <script>
-        var slideIndex = 1;
-        showSlides(slideIndex);
-
-        function plusSlides(n) {
-          showSlides(slideIndex += n);
-        }
-
-        function currentSlide(n) {
-          showSlides(slideIndex = n);
-        }
-
-        function showSlides(n) {
-          var i;
-          var slides = document.getElementsByClassName("mySlides");
-          var dots = document.getElementsByClassName("dot");
-          if (n > slides.length) { slideIndex = 1 }
-          if (n < 1) { slideIndex = slides.length }
-          for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-          }
-          for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-          }
-          slides[slideIndex - 1].style.display = "block";
-          dots[slideIndex - 1].className += " active";
-        }
-      </script>
-      <section id="contact">
-        <div class="hi">
-          <h4>CONTACT</h4>
-          <hr>
-          <p><strong>Ready to Transform Your Data into Insights?</strong></p>
-          <p>I believe that great data drives great decisions. Let's discuss how I can help you unlock the full
-            potential of your data. Feel free to <a href="mailto:akashcholke@gmail.com">email me</a> to get started.</p>
-          <h3>Otherwise</h3>
-          <p>Let's connect and chat!</p>
-
-
-          <head>
-            <div class="icon">
-              <title>Font Awesome Icons</title>
-              <meta name="viewport" content="width=device-width, initial-scale=1">
-              <link rel="stylesheet"
-                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-            </div>
-          </head>
-
-          <body>
-            <ul>
-              <section>
-                <a href="https://www.linkedin.com/in/akashcholke/"><i class="fa fa-linkedin-square"
-                    style="font-size:48px;color:#0e76a8"></i></a> &nbsp;
-                &nbsp;
-                <a href="http://t.me/mrsky3000"><i class="fa fa-telegram" style="font-size:48px;color: #0088cc"></i></a>
-              </section>
-            </ul>
-          </body>
-        </div>
-      </section>
-
-      <!-- END CONTACT SECTION -->
-
-      <!-- START FOOTER SECTION -->
-      <p align="center">
-        Copyright &#169 2024 Akash Cholke.All rights reserved
-
-      </p>
-      </div>
-      </div>
+    <p align="center">Copyright &#169 2024 Akash Cholke. All rights reserved</p>
   </body>
- 
-</body>
+
 </html>
-
-<!---start--->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Firecracker Effect with Text</title>
-  <style>
-    body {
-      background-color: white;
-      margin: 0;
-      overflow: hidden;
-      font-family: Arial, sans-serif;
-    }
-
-    .fireworks-container {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-    }
-
-    .text {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      font-size: 36px;
-      color: black;
-      z-index: 10;
-      font-weight: bold;
-      pointer-events: none;
-    }
-
-    .firecracker {
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background-color: red;
-      animation: firework 1s forwards;
-    }
-
-    @keyframes firework {
-      0% {
-        transform: scale(0);
-        opacity: 1;
-      }
-      100% {
-        transform: scale(5);
-        opacity: 0;
-      }
-    }
-  </style>
-</head>
-<body>
-
-<div class="fireworks-container"></div>
-<div class="text">Hey Folk!</div>
-
-<script>
-  // Function to create firecracker effects at specific coordinates
-  function createFirecracker(x, y) {
-    const firecracker = document.createElement('div');
-    firecracker.classList.add('firecracker');
-    firecracker.style.left = `${x}px`;
-    firecracker.style.top = `${y}px`;
-    document.querySelector('.fireworks-container').appendChild(firecracker);
-
-    // Remove firecracker after animation ends
-    setTimeout(() => {
-      firecracker.remove();
-    }, 1000); // Matches animation duration
-  }
-
-  // Create random firecrackers around the text for the first 5 seconds
-  setTimeout(() => {
-    setInterval(() => {
-      const x = Math.random() * 100 + 20;  // Random X position near the text (starting at left)
-      const y = Math.random() * 100 + 20;  // Random Y position near the text
-      createFirecracker(x, y);
-    }, 100); // Fire a new firecracker every 100ms
-  }, 0);
-
-  // Stop the fireworks after 5 seconds
-  setTimeout(() => {
-    document.querySelector('.fireworks-container').style.display = 'none'; // Hide fireworks container
-  }, 5000);  // Stop after 5 seconds
-</script>
-
-</body>
-</html>
-
