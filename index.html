@@ -380,34 +380,49 @@
 
 <!---start--->
 <style>
+  /* Style for the "Hi Folk!" animation */
   .emoji-animation {
-    font-size: 50px;
+    font-size: 40px;
+    font-weight: bold;
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 20px;
+    left: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: burstEffect 2s ease-out, fadeOut 3s 2s forwards;
+    animation: pulseEffect 1s infinite, fadeOut 4s 2s forwards, burstEffect 2s ease-out forwards;
   }
 
-  /* Animation for the cracker burst effect */
+  /* Burst animation to make the text grow and shrink */
   @keyframes burstEffect {
     0% {
       transform: scale(1);
       opacity: 0;
     }
     50% {
-      transform: scale(2);
+      transform: scale(1.5);
       opacity: 1;
     }
     100% {
       transform: scale(1);
-      opacity: 0;
+      opacity: 0.5;
     }
   }
 
-  /* Fade out animation */
+  /* Pulsing effect to grab attention */
+  @keyframes pulseEffect {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  /* Fade out after animation */
   @keyframes fadeOut {
     0% {
       opacity: 1;
@@ -416,10 +431,12 @@
       opacity: 0;
     }
   }
+
 </style>
 
+<!-- The element that will show the "Hi Folk!" message -->
 <div id="emojiAnimation" class="emoji-animation">
-  🎆 Hey Folk! 🎉
+  👋 Hi Folk! 
 </div>
 
 <script>
@@ -428,4 +445,3 @@
     document.getElementById('emojiAnimation').style.display = 'none';
   }, 5000);
 </script>
- 
