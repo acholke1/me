@@ -67,6 +67,22 @@
             }
         }
 
+        /* Menu Icon Style */
+        .menu-icon {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            font-size: 30px;
+            color: #3498DB;
+            z-index: 10; /* Keep the menu icon above other content */
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .menu-icon:hover {
+            transform: scale(1.2); /* Slightly enlarge icon on hover */
+        }
+
         /* Fade-in animation */
         @keyframes fadeIn {
             from {
@@ -91,6 +107,9 @@
     </style>
 </head>
 <body>
+
+<!-- Menu Icon in Top-Left Corner -->
+<i class="fas fa-bars menu-icon"></i>
 
 <section class="content">
     <h1>S U M M A R Y</h1>
