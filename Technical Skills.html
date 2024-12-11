@@ -241,133 +241,183 @@
       </p>
   </body>
   </section>
-</body>
-<style>
-  body {
-    font-family: Verdana, sans-serif;
-    margin: 0;
-    color: white;
-    background-color: black;
-  }
 
-  h4 {
-    text-align: center;
-  }
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Add Font Awesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+      body {
+        font-family: Verdana, sans-serif;
+        margin: 0;
+        color: white;
+        background-color: black;
+        overflow: hidden;
+        /* Hide overflow to make floating icons more aesthetic */
+      }
 
-  table {
-    color: black;
-    font-weight: bold;
-    background-color: snow;
-  }
+      h4 {
+        text-align: center;
+      }
 
-  img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
+      table {
+        color: black;
+        font-weight: bold;
+        background-color: snow;
+      }
 
-  p {
-    text-align: center;
-  }
+      img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
 
-  h3 {
-    background-color: black;
-    color: white;
-    text-align: center;
-  }
+      p {
+        text-align: center;
+      }
 
-  .tech {
-    color: black;
-    background-color: #FADBD8;
-  }
+      h3 {
+        background-color: black;
+        color: white;
+        text-align: center;
+      }
 
-  #content {
-    text-align: center;
-  }
+      .tech {
+        color: black;
+        background-color: #FADBD8;
+      }
 
-  /* Add animation to the skills section */
-  .skills-section {
-    opacity: 0;
-    animation: fadeIn 2s forwards;
-  }
+      #content {
+        text-align: center;
+      }
 
-  .skills-section ul li {
-    list-style-type: none;
-    padding: 10px;
-    font-size: 18px;
-    background-color: #2C3E50;
-    margin: 5px 0;
-    border-radius: 5px;
-    opacity: 0;
-    animation: slideUp 1s forwards;
-  }
+      /* Add animation to the skills section */
+      .skills-section {
+        opacity: 0;
+        animation: fadeIn 2s forwards;
+      }
 
-  .skills-section ul li span {
-    font-weight: bold;
-    color: #3498DB;
-    /* Blue color for the technology names */
-  }
+      .skills-section ul li {
+        list-style-type: none;
+        padding: 10px;
+        font-size: 18px;
+        background-color: #2C3E50;
+        margin: 5px 0;
+        border-radius: 5px;
+        opacity: 0;
+        animation: slideUp 1s forwards;
+      }
 
-  /* Fade-in animation */
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
+      .skills-section ul li span {
+        font-weight: bold;
+        color: #3498DB;
+        /* Blue color for the technology names */
+      }
 
-    to {
-      opacity: 1;
-    }
-  }
+      /* Floating Icons */
+      .floating-icons {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        /* Keep icons behind the content */
+        pointer-events: none;
+        /* Disable interaction with icons */
+      }
 
-  /* Slide-up animation */
-  @keyframes slideUp {
-    from {
-      transform: translateY(20px);
-      opacity: 0;
-    }
+      .floating-icons .icon {
+        font-size: 50px;
+        color: #3498DB;
+        /* Blue color for icons */
+        position: absolute;
+        animation: floatIcon 5s linear infinite;
+        /* Make icons float */
+      }
 
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
+      /* Animation for the floating icons */
+      @keyframes floatIcon {
+        0% {
+          transform: translate(0, 0) rotate(0deg);
+        }
 
-  .content h1 {
-    text-align: center;
-    font-size: 2.5em;
-  }
+        50% {
+          transform: translate(300px, 300px) rotate(180deg);
+        }
 
-  .content p {
-    text-align: center;
-    font-size: 1.2em;
-  }
-</style>
-</head>
+        100% {
+          transform: translate(0, 600px) rotate(360deg);
+        }
+      }
 
-<body>
+      /* Fade-in animation */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
 
-  <section class="content">
-    <h1>S U M M A R Y</h1>
-    <p>
-      Data Engineer with Expertise in Apache Airflow, GCP, and Azure Databricks with a proven track record of
-      designing,
-      building, and optimizing data pipelines using Apache Airflow, Google Cloud Platform (GCP) services, and
-      Azure
-      Databricks. I am dedicated to leveraging my technical proficiency to enable data-driven decision-making and
-      deliver
-      impactful solutions for complex data challenges.
-    </p>
+        to {
+          opacity: 1;
+        }
+      }
 
-    <h2>S K I L L S</h2>
-    <div class="skills-section">
-      <ul>
-        <li>Data Engineering: <span>Apache Airflow | GCP Data Services | Azure Databricks | AWS S3</span></li>
-        <li>Data Tools & Technologies: <span>Teradata | IBM DataStage | Python | PySpark | SQL</span></li>
-        <li>Version Control & CI/CD: <span>GitHub | Bitbucket | Jenkins | Concord (Walmart)</span></li>
-      </ul>
+      /* Slide-up animation */
+      @keyframes slideUp {
+        from {
+          transform: translateY(20px);
+          opacity: 0;
+        }
+
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .content h1 {
+        text-align: center;
+        font-size: 2.5em;
+      }
+
+      .content p {
+        text-align: center;
+        font-size: 1.2em;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <section class="content">
+      <h1>S U M M A R Y</h1>
+      <p>
+        Data Engineer with Expertise in Apache Airflow, GCP, and Azure Databricks with a proven track record of
+        designing,
+        building, and optimizing data pipelines using Apache Airflow, Google Cloud Platform (GCP) services, and Azure
+        Databricks. I am dedicated to leveraging my technical proficiency to enable data-driven decision-making and
+        deliver
+        impactful solutions for complex data challenges.
+      </p>
+
+      <h2>S K I L L S</h2>
+      <div class="skills-section">
+        <ul>
+          <li>Data Engineering: <span>Apache Airflow | GCP Data Services | Azure Databricks | AWS S3</span></li>
+          <li>Data Tools & Technologies: <span>Teradata | IBM DataStage | Python | PySpark | SQL</span></li>
+          <li>Version Control & CI/CD: <span>GitHub | Bitbucket | Jenkins | Concord (Walmart)</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Floating icons representing skills -->
+    <div class="floating-icons">
+      <i class="fab fa-python icon" style="top: 10%; left: 15%;"></i>
+      <i class="fab fa-aws icon" style="top: 20%; left: 40%;"></i>
+      <i class="fab fa-github icon" style="top: 30%; left: 70%;"></i>
+      <i class="fab fa-cloud icon" style="top: 50%; left: 10%;"></i>
+      <i class="fab fa-docker icon" style="top: 60%; left: 50%;"></i>
+      <i class="fab fa-java icon" style="top: 80%; left: 80%;"></i>
     </div>
-  </section>
 
-</body>
+  </body>
 
-</html>
+  </html>
