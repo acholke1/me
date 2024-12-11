@@ -385,42 +385,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Floating Emoji Animation</title>
+  <title>Top-Left Animation</title>
   <style>
     body {
       margin: 0;
-      height: 100vh;
+      padding: 0;
       overflow: hidden;
     }
 
-    #floatingEmoji {
+    /* Container for animation */
+    .top-left-animation {
       position: absolute;
-      left: 10px; /* Start near the left corner */
-      top: 10px;
+      top: 20px;
+      left: 20px;
       font-size: 24px;
       font-family: Arial, sans-serif;
-      animation: moveToCenter 5s ease-in-out forwards;
+      color: purple;
+      animation: fadeInOut 5s ease-in-out forwards;
     }
 
-    @keyframes moveToCenter {
-      0% {
-        transform: translate(0, 0);
-      }
-      100% {
-        transform: translate(50vw, 50vh); /* Move to the midpoint of the page */
-      }
+    /* Keyframes for text animation */
+    @keyframes fadeInOut {
+      0% { opacity: 0; transform: scale(0.5); }
+      20% { opacity: 1; transform: scale(1); }
+      80% { opacity: 1; }
+      100% { opacity: 0; transform: scale(0.5); }
+    }
+
+    /* Star effect */
+    .star {
+      position: absolute;
+      background-color: purple;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      animation: blink 1s infinite;
+    }
+
+    /* Random blinking effect */
+    @keyframes blink {
+      0%, 100% { opacity: 0; transform: scale(0.5); }
+      50% { opacity: 1; transform: scale(1.5); }
     }
   </style>
 </head>
 <body>
-  <div id="floatingEmoji">👋 Hi Buddy!</div>
+  <div class="top-left-animation">
+    <span>✨ Hey Buddy! ✨</span>
+    <div id="star-container"></div>
+  </div>
 
   <script>
-    // Hide the emoji after 5 seconds
-    setTimeout(function() {
-      const emoji = document.getElementById("floatingEmoji");
-      emoji.style.display = "none";
+    // Create random stars
+    const starContainer = document.getElementById('star-container');
+    for (let i = 0; i < 20; i++) {
+      const star = document.createElement('div');
+      star.className = 'star';
+      star.style.top = Math.random() * 40 + 'px'; // Confetti spread
+      star.style.left = Math.random() * 100 + 'px';
+      star.style.animationDelay = Math.random() + 's';
+      starContainer.appendChild(star);
+    }
+
+    // Remove the animation after 5 seconds
+    setTimeout(() => {
+      document.querySelector('.top-left-animation').remove();
     }, 5000);
   </script>
 </body>
 </html>
+
