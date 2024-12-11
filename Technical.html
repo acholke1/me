@@ -252,6 +252,7 @@
   
   <head>
       <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"> <!-- Font Awesome CDN for icons -->
       <style>
           body {
               font-family: Verdana, sans-serif;
@@ -399,29 +400,30 @@
               margin-top: 50px;
           }
   
-          /* New Section for Icons */
-          .icon-section {
-              display: flex;
-              flex-wrap: wrap;
-              justify-content: center;
+          /* Style for the circular icons section */
+          .icons-section {
+              text-align: center;
               margin-top: 50px;
           }
   
-          .icon-section .icon {
-              margin: 20px;
-              text-align: center;
-              opacity: 0;
-              animation: fadeIn 2s forwards, zoomIn 1s ease-in-out forwards;
+          .icon-container {
+              display: flex;
+              justify-content: center;
+              gap: 20px;
+              flex-wrap: wrap;
           }
   
-          .icon-section img {
-              width: 50px;
-              height: 50px;
-              transition: transform 0.3s ease;
+          .icon-container i {
+              font-size: 40px;
+              color: #3498DB;
+              background-color: #2C3E50;
+              border-radius: 50%;
+              padding: 20px;
+              transition: transform 0.5s;
           }
   
-          .icon-section img:hover {
-              transform: scale(1.1);
+          .icon-container i:hover {
+              transform: rotateY(180deg);
           }
   
       </style>
@@ -454,59 +456,22 @@
           </div>
       </section>
   
-      <!-- Icon Section -->
-      <div class="icon-section">
-          <div class="icon">
-              <img src="path/to/icon1.png" alt="Data Engineering Icon">
+      <!-- Icons Section -->
+      <section class="icons-section">
+          <div class="icon-container">
+              <i class="fab fa-python"></i>
+              <i class="fab fa-github"></i>
+              <i class="fab fa-aws"></i>
+              <i class="fab fa-docker"></i>
+              <i class="fab fa-gcp"></i>
+              <i class="fab fa-azure"></i>
+              <i class="fab fa-databricks"></i>
+              <i class="fas fa-database"></i>
           </div>
-          <div class="icon">
-              <img src="path/to/icon2.png" alt="Cloud Icon">
-          </div>
-          <div class="icon">
-              <img src="path/to/icon3.png" alt="Big Data Icon">
-          </div>
-          <div class="icon">
-              <img src="path/to/icon4.png" alt="Machine Learning Icon">
-          </div>
-          <div class="icon">
-              <img src="path/to/icon5.png" alt="Analytics Icon">
-          </div>
-          <div class="icon">
-              <img src="path/to/icon6.png" alt="Python Icon">
-          </div>
-          <div class="icon">
-              <img src="path/to/icon7.png" alt="SQL Icon">
-          </div>
-          <div class="icon">
-              <img src="path/to/icon8.png" alt="Cloud Computing Icon">
-          </div>
-          <div class="icon">
-              <img src="path/to/icon9.png" alt="Automation Icon">
-          </div>
-          <div class="icon">
-              <img src="path/to/icon10.png" alt="Data Pipeline Icon">
-          </div>
-          <div class="icon">
-              <img src="path/to/icon11.png" alt="Data Modeling Icon">
-          </div>
-          <div class="icon">
-              <img src="path/to/icon12.png" alt="Data Science Icon">
-          </div>
-          <div class="icon">
-              <img src="path/to/icon13.png" alt="Cloud Storage Icon">
-          </div>
-          <div class="icon">
-              <img src="path/to/icon14.png" alt="Data Visualization Icon">
-          </div>
-          <div class="icon">
-              <img src="path/to/icon15.png" alt="ETL Icon">
-          </div>
-          <div class="icon">
-              <img src="path/to/icon16.png" alt="Database Icon">
-          </div>
-      </div>
+      </section>
   
   </body>
   
   </html>
+  
   
