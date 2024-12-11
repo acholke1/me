@@ -247,7 +247,8 @@
 
 <!--start-->
 
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -257,6 +258,10 @@
             margin: 0;
             color: white;
             background-color: black;
+            height: 100vh; /* Full viewport height */
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
         }
 
         h4 {
@@ -298,6 +303,17 @@
         .skills-section {
             opacity: 0;
             animation: fadeIn 2s forwards;
+            text-align: center; /* Center the text within the section */
+        }
+
+        /* Flexbox to center the skill items */
+        .skills-section ul {
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center items horizontally */
+            justify-content: center; /* Center items vertically */
+            list-style-type: none;
         }
 
         .skills-section ul li {
@@ -308,7 +324,7 @@
             margin: 5px 0;
             border-radius: 5px;
             opacity: 0;
-            animation: slideUp 1s forwards;
+            animation: slideUp 1s forwards, bounce 1s 1s forwards; /* Bounce and slide-up animations */
         }
 
         .skills-section ul li span {
@@ -341,6 +357,50 @@
             }
         }
 
+        /* Bounce animation */
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* Rotate animation (Optional) */
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Zoom-in animation */
+        @keyframes zoomIn {
+            from {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .zoom-in-effect {
+            animation: zoomIn 1s ease-in-out forwards;
+        }
+
+        /* Content styling */
         .content h1 {
             text-align: center;
             font-size: 2.5em;
@@ -349,6 +409,12 @@
         .content p {
             text-align: center;
             font-size: 1.2em;
+        }
+
+        /* Skill List styling */
+        .content h2 {
+            text-align: center;
+            font-size: 2em;
         }
     </style>
 </head>
@@ -370,9 +436,9 @@
         <h2>S K I L L S</h2>
         <div class="skills-section">
             <ul>
-                <li>Data Engineering: <span>Apache Airflow | GCP Data Services | Azure Databricks | AWS S3</span></li>
-                <li>Data Tools & Technologies: <span>Teradata | IBM DataStage | Python | PySpark | SQL</span></li>
-                <li>Version Control & CI/CD: <span>GitHub | Bitbucket | Jenkins | Concord (Walmart)</span></li>
+                <li class="zoom-in-effect">Data Engineering: <span>Apache Airflow | GCP Data Services | Azure Databricks | AWS S3</span></li>
+                <li class="zoom-in-effect">Data Tools & Technologies: <span>Teradata | IBM DataStage | Python | PySpark | SQL</span></li>
+                <li class="zoom-in-effect">Version Control & CI/CD: <span>GitHub | Bitbucket | Jenkins | Concord (Walmart)</span></li>
             </ul>
         </div>
     </section>
@@ -380,3 +446,4 @@
 </body>
 
 </html>
+
