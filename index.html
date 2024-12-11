@@ -379,69 +379,96 @@
 </html>
 
 <!---start--->
-<style>
-  /* Style for the "Hi Folk!" animation */
-  .emoji-animation {
-    font-size: 40px;
-    font-weight: bold;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: pulseEffect 1s infinite, fadeOut 4s 2s forwards, burstEffect 2s ease-out forwards;
-  }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Firecracker Effect with Text</title>
+  <style>
+    body {
+      background-color: black;
+      margin: 0;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
 
-  /* Burst animation to make the text grow and shrink */
-  @keyframes burstEffect {
-    0% {
-      transform: scale(1);
-      opacity: 0;
+    .fireworks-container {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
     }
-    50% {
-      transform: scale(1.5);
-      opacity: 1;
-    }
-    100% {
-      transform: scale(1);
-      opacity: 0.5;
-    }
-  }
 
-  /* Pulsing effect to grab attention */
-  @keyframes pulseEffect {
-    0% {
-      transform: scale(1);
+    .text {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 36px;
+      color: white;
+      z-index: 10;
+      font-weight: bold;
+      pointer-events: none;
     }
-    50% {
-      transform: scale(1.2);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
 
-  /* Fade out after animation */
-  @keyframes fadeOut {
-    0% {
-      opacity: 1;
+    .firecracker {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: red;
+      animation: firework 1s forwards;
     }
-    100% {
-      opacity: 0;
+
+    @keyframes firework {
+      0% {
+        transform: scale(0);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(5);
+        opacity: 0;
+      }
     }
-  }
+  </style>
+</head>
+<body>
 
-</style>
-
-<!-- The element that will show the "Hi Folk!" message -->
-<div id="emojiAnimation" class="emoji-animation">
-  👋 Hi Folk! 
-</div>
+<div class="fireworks-container"></div>
+<div class="text">Hey Folk!</div>
 
 <script>
-  // Function to remove the animation elements after 5 seconds
-  setTimeout(function() {
-    document.getElementById('emojiAnimation').style.display = 'none';
-  }, 5000);
+  // Function to create firecracker effects at specific coordinates
+  function createFirecracker(x, y) {
+    const firecracker = document.createElement('div');
+    firecracker.classList.add('firecracker');
+    firecracker.style.left = `${x}px`;
+    firecracker.style.top = `${y}px`;
+    document.querySelector('.fireworks-container').appendChild(firecracker);
+
+    // Remove firecracker after animation ends
+    setTimeout(() => {
+      firecracker.remove();
+    }, 1000); // Matches animation duration
+  }
+
+  // Create random firecrackers around the text for the first 5 seconds
+  setTimeout(() => {
+    setInterval(() => {
+      const x = Math.random() * 100 + 20;  // Random X position near the text (starting at left)
+      const y = Math.random() * 100 + 20;  // Random Y position near the text
+      createFirecracker(x, y);
+    }, 100); // Fire a new firecracker every 100ms
+  }, 0);
+
+  // Stop the fireworks after 5 seconds
+  setTimeout(() => {
+    document.querySelector('.fireworks-container').style.display = 'none'; // Hide fireworks container
+  }, 5000);  // Stop after 5 seconds
 </script>
+
+</body>
+</html>
+
