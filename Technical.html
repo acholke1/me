@@ -462,3 +462,186 @@
 
   </html>
 <!--start-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"> <!-- Font Awesome -->
+    <style>
+        body {
+            font-family: Verdana, sans-serif;
+            margin: 0;
+            color: white;
+            background-color: black;
+            text-align: center;
+        }
+
+        .icons-section {
+            margin-top: 50px;
+        }
+
+        .icon-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .flip-container {
+            perspective: 1000px;
+            display: inline-block;
+        }
+
+        .flipper {
+            transform-style: preserve-3d;
+            transition: 0.5s;
+            width: 100px;
+            height: 100px;
+            position: relative;
+        }
+
+        .flip-container:hover .flipper {
+            transform: rotateY(180deg);
+        }
+
+        .front, .back {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: white;
+            background-color: #3498DB;
+            border-radius: 50%;
+        }
+
+        .back {
+            background-color: #2C3E50;
+            color: #fff;
+            transform: rotateY(180deg);
+            padding: 10px;
+            font-size: 14px;
+        }
+
+        .back i {
+            margin-bottom: 10px;
+        }
+
+        .icon-container i {
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .icon-container i:hover {
+            transform: scale(1.1);
+        }
+
+    </style>
+</head>
+
+<body>
+    <section class="icons-section">
+        <div class="icon-container">
+            <!-- Database Icon -->
+            <div class="flip-container">
+                <div class="flipper">
+                    <div class="front">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="back">
+                        <i class="fas fa-arrow-down"></i>
+                        <p>Database Management</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Management Icon -->
+            <div class="flip-container">
+                <div class="flipper">
+                    <div class="front">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="back">
+                        <i class="fas fa-arrow-down"></i>
+                        <p>Data Management</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Big Data Icon -->
+            <div class="flip-container">
+                <div class="flipper">
+                    <div class="front">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <div class="back">
+                        <i class="fas fa-arrow-down"></i>
+                        <p>Big Data</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Monitoring Icon -->
+            <div class="flip-container">
+                <div class="flipper">
+                    <div class="front">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="back">
+                        <i class="fas fa-arrow-down"></i>
+                        <p>Monitoring</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Analytics Icon -->
+            <div class="flip-container">
+                <div class="flipper">
+                    <div class="front">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <div class="back">
+                        <i class="fas fa-arrow-down"></i>
+                        <p>Data Analytics</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Performance Icon -->
+            <div class="flip-container">
+                <div class="flipper">
+                    <div class="front">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <div class="back">
+                        <i class="fas fa-arrow-down"></i>
+                        <p>Performance</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Predictive Analysis Icon -->
+            <div class="flip-container">
+                <div class="flipper">
+                    <div class="front">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="back">
+                        <i class="fas fa-arrow-down"></i>
+                        <p>Predictive Analysis</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
+
