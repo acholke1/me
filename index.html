@@ -379,79 +379,62 @@
 </html>
 
 <!---start--->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Top-Left Animation</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoji Animation</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f8ff;
+        }
 
-    /* Container for animation */
-    .top-left-animation {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      font-size: 24px;
-      font-family: Arial, sans-serif;
-      color: purple;
-      animation: fadeInOut 5s ease-in-out forwards;
-    }
+        #animatedText {
+            position: absolute;
+            top: 20%;
+            left: 10%;
+            font-size: 2rem;
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            animation: moveToCenter 5s ease-in-out, blink 1s infinite alternate;
+        }
 
-    /* Keyframes for text animation */
-    @keyframes fadeInOut {
-      0% { opacity: 0; transform: scale(0.5); }
-      20% { opacity: 1; transform: scale(1); }
-      80% { opacity: 1; }
-      100% { opacity: 0; transform: scale(0.5); }
-    }
+        @keyframes moveToCenter {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(300px, 200px);
+            }
+        }
 
-    /* Star effect */
-    .star {
-      position: absolute;
-      background-color: purple;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      animation: blink 1s infinite;
-    }
-
-    /* Random blinking effect */
-    @keyframes blink {
-      0%, 100% { opacity: 0; transform: scale(0.5); }
-      50% { opacity: 1; transform: scale(1.5); }
-    }
-  </style>
+        @keyframes blink {
+            0% {
+                opacity: 1;
+                font-size: 2rem;
+            }
+            100% {
+                opacity: 0.5;
+                font-size: 2.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="top-left-animation">
-    <span>✨ Hey Buddy! ✨</span>
-    <div id="star-container"></div>
-  </div>
-
-  <script>
-    // Create random stars
-    const starContainer = document.getElementById('star-container');
-    for (let i = 0; i < 20; i++) {
-      const star = document.createElement('div');
-      star.className = 'star';
-      star.style.top = Math.random() * 40 + 'px'; // Confetti spread
-      star.style.left = Math.random() * 100 + 'px';
-      star.style.animationDelay = Math.random() + 's';
-      starContainer.appendChild(star);
-    }
-
-    // Remove the animation after 5 seconds
-    setTimeout(() => {
-      document.querySelector('.top-left-animation').remove();
-    }, 5000);
-  </script>
+    <div id="animatedText">
+        <span>👋</span>
+        <span>Hey Buddy!</span>
+    </div>
 </body>
 </html>
+
 
