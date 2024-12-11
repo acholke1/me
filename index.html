@@ -123,7 +123,7 @@
         <marquee behavior="slide" direction="up">
           <p class="hee" style="line-height: 1.8; margin-bottom: 20px;">
             <strong>Dream It. Design It. Deliver It.</strong><br /><br />
-            Data is not just numbers – it’s the power to make smarter decisions, fuel business growth and unlock new
+            Data is not just numbers – it’s the power to make smarter decisions, fuel business growth, and unlock new
             possibilities.<br /><br />
             As a Data Engineer, I’m on a mission to transform raw data into actionable insights. With every pipeline I
             build and every dashboard I design, I aim to bridge the gap between complex data and clear, impactful
@@ -374,49 +374,62 @@
       </div>
       </div>
   </body>
-  </section>
+ 
 </body>
-
-</section>
-<div id="floatingEmoji" style="position: absolute; font-size: 30px; display: none;">👋 Hi Buddy!</div>
-
-</body>
-@keyframes float {
-0% {
-transform: translate(0, 0);
-}
-25% {
-transform: translate(50px, -50px);
-}
-50% {
-transform: translate(-50px, -100px);
-}
-75% {
-transform: translate(100px, -150px);
-}
-100% {
-transform: translate(0, 0);
-}
-}
-
-
-
-</section><br /><br />
-</body>
-window.onload = function() {
-var emoji = document.getElementById("floatingEmoji");
-emoji.style.display = "block"; // Show the emoji after page load
-emoji.style.animation = "float 5s ease-in-out"; // Apply the floating animation
-
-setTimeout(function() {
-emoji.style.display = "none"; // Hide the emoji after 5 seconds
-}, 5000); // Hide after 5 seconds
-};
-
-</body>
-
 </html>
 
-</body>
+<!---start--->
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floating Emoji</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        #floatingEmoji {
+            position: absolute;
+            font-size: 30px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: float 5s ease-in-out;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(-50%, -50%);
+            }
+            25% {
+                transform: translate(-30%, -70%);
+            }
+            50% {
+                transform: translate(-70%, -30%);
+            }
+            75% {
+                transform: translate(-50%, -10%);
+            }
+            100% {
+                transform: translate(-50%, -50%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="floatingEmoji">👋 Hi Buddy!</div>
+
+    <script>
+        // Show the emoji on load
+        const emoji = document.getElementById("floatingEmoji");
+
+        // Automatically remove emoji after 5 seconds
+        setTimeout(() => {
+            emoji.style.display = "none";
+        }, 5000);
+    </script>
+</body>
 </html>
