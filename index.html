@@ -378,12 +378,40 @@
 </body>
 
 </section>
+<div id="floatingEmoji" style="position: absolute; font-size: 30px; display: none;">👋 Hi Buddy!</div>
+
+</body>
+@keyframes float {
+0% {
+transform: translate(0, 0);
+}
+25% {
+transform: translate(50px, -50px);
+}
+50% {
+transform: translate(-50px, -100px);
+}
+75% {
+transform: translate(100px, -150px);
+}
+100% {
+transform: translate(0, 0);
+}
+}
 
 
 
 </section><br /><br />
+</body>
+window.onload = function() {
+var emoji = document.getElementById("floatingEmoji");
+emoji.style.display = "block"; // Show the emoji after page load
+emoji.style.animation = "float 5s ease-in-out"; // Apply the floating animation
 
-
+setTimeout(function() {
+emoji.style.display = "none"; // Hide the emoji after 5 seconds
+}, 5000); // Hide after 5 seconds
+};
 
 </body>
 
