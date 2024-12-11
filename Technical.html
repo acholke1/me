@@ -249,215 +249,150 @@
 
   <!DOCTYPE html>
   <html lang="en">
-
+  
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-      body {
-        font-family: Verdana, sans-serif;
-        margin: 0;
-        color: white;
-        background-color: black;
-        padding-left: 40px;
-        /* Keep some padding for the layout */
-      }
-
-      h4 {
-        text-align: center;
-      }
-
-      table {
-        color: black;
-        font-weight: bold;
-        background-color: snow;
-      }
-
-      img {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      p {
-        text-align: center;
-        margin: 20px 0;
-        /* Add consistent vertical spacing between content and title */
-      }
-
-      h3 {
-        background-color: black;
-        color: white;
-        text-align: center;
-      }
-
-      .tech {
-        color: black;
-        background-color: #FADBD8;
-      }
-
-      #content {
-        text-align: center;
-      }
-
-      /* Add animation to the skills section */
-      .skills-section {
-        opacity: 0;
-        animation: fadeIn 2s forwards;
-        text-align: center;
-        /* Center the text within the section */
-        margin-top: 50px;
-        /* Add space above the skills section */
-      }
-
-      /* Flexbox to center the skill items */
-      .skills-section ul {
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        /* Center items horizontally */
-        justify-content: center;
-        /* Center items vertically */
-        list-style-type: none;
-      }
-
-      .skills-section ul li {
-        list-style-type: none;
-        padding: 10px;
-        font-size: 18px;
-        background-color: #2C3E50;
-        margin: 5px 0;
-        border-radius: 5px;
-        opacity: 0;
-        animation: slideUp 1s forwards, bounce 1s 1s forwards;
-        /* Bounce and slide-up animations */
-      }
-
-      .skills-section ul li span {
-        font-weight: bold;
-        color: #3498DB;
-        /* Blue color for the technology names */
-      }
-
-      /* Fade-in animation */
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-
-        to {
-          opacity: 1;
-        }
-      }
-
-      /* Slide-up animation */
-      @keyframes slideUp {
-        from {
-          transform: translateY(20px);
-          opacity: 0;
-        }
-
-        to {
-          transform: translateY(0);
-          opacity: 1;
-        }
-      }
-
-      /* Bounce animation */
-      @keyframes bounce {
-        0% {
-          transform: translateY(0);
-        }
-
-        50% {
-          transform: translateY(-10px);
-        }
-
-        100% {
-          transform: translateY(0);
-        }
-      }
-
-      /* Rotate animation (Optional) */
-      @keyframes rotate {
-        from {
-          transform: rotate(0deg);
-        }
-
-        to {
-          transform: rotate(360deg);
-        }
-      }
-
-      /* Zoom-in animation */
-      @keyframes zoomIn {
-        from {
-          transform: scale(0);
-          opacity: 0;
-        }
-
-        to {
-          transform: scale(1);
-          opacity: 1;
-        }
-      }
-
-      .zoom-in-effect {
-        animation: zoomIn 1s ease-in-out forwards;
-      }
-
-      /* Content styling */
-      .content h1 {
-        text-align: center;
-        font-size: 2.5em;
-        margin-bottom: 20px;
-        /* Add space between title and content */
-      }
-
-      .content p {
-        text-align: center;
-        font-size: 1.2em;
-        margin-top: 10px;
-        /* Control space from the title */
-      }
-
-      /* Skill List styling */
-      .content h2 {
-        text-align: center;
-        font-size: 2em;
-        margin-top: 50px;
-        /* Add margin between the title and the skill section */
-      }
-    </style>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <style>
+          body {
+              font-family: Verdana, sans-serif;
+              margin: 0;
+              color: white;
+              background-color: black;
+              padding-left: 40px;
+          }
+  
+          h4 {
+              text-align: center;
+          }
+  
+          table {
+              color: black;
+              font-weight: bold;
+              background-color: snow;
+          }
+  
+          img {
+              display: block;
+              margin-left: auto;
+              margin-right: auto;
+          }
+  
+          p {
+              text-align: center;
+              margin: 20px 0;
+          }
+  
+          h3 {
+              background-color: black;
+              color: white;
+              text-align: center;
+          }
+  
+          .tech {
+              color: black;
+              background-color: #FADBD8;
+          }
+  
+          #content {
+              text-align: center;
+          }
+  
+          /* Floating Icon Styles */
+          .floating-icons {
+              position: fixed;
+              z-index: 10;
+              pointer-events: none;
+          }
+  
+          .floating-icons .icon {
+              position: absolute;
+              font-size: 30px;
+              animation: floatIcon 6s ease-in-out infinite;
+          }
+  
+          /* Floating animation */
+          @keyframes floatIcon {
+              0% {
+                  transform: translateY(0);
+              }
+  
+              50% {
+                  transform: translateY(-20px);
+              }
+  
+              100% {
+                  transform: translateY(0);
+              }
+          }
+  
+          /* Customize the random placement of icons */
+          .icon1 {
+              top: 10%;
+              left: 10%;
+              animation-delay: 0s;
+          }
+  
+          .icon2 {
+              top: 30%;
+              left: 50%;
+              animation-delay: 1s;
+          }
+  
+          .icon3 {
+              top: 50%;
+              left: 80%;
+              animation-delay: 2s;
+          }
+  
+          .icon4 {
+              top: 70%;
+              left: 20%;
+              animation-delay: 3s;
+          }
+  
+          .icon5 {
+              top: 80%;
+              left: 60%;
+              animation-delay: 4s;
+          }
+      </style>
   </head>
-
+  
   <body>
-
-    <section class="content">
-      <h1>S U M M A R Y</h1>
-      <p>
-        Data Engineer with Expertise in Apache Airflow, GCP, and Azure Databricks with a proven track record of
-        designing,
-        building, and optimizing data pipelines using Apache Airflow, Google Cloud Platform (GCP) services, and
-        Azure
-        Databricks. I am dedicated to leveraging my technical proficiency to enable data-driven decision-making and
-        deliver
-        impactful solutions for complex data challenges.
-      </p>
-
-      <h2>S K I L L S</h2>
-      <div class="skills-section">
-        <ul>
-          <li class="zoom-in-effect">Data Engineering: <span>Apache Airflow | GCP Data Services | Azure Databricks | AWS
-              S3</span></li>
-          <li class="zoom-in-effect">Data Tools & Technologies: <span>Teradata | IBM DataStage | Python | PySpark |
-              SQL</span></li>
-          <li class="zoom-in-effect">Version Control & CI/CD: <span>GitHub | Bitbucket | Jenkins | Concord
-              (Walmart)</span></li>
-        </ul>
+  
+      <!-- Content section with summary and skills -->
+      <section class="content">
+          <h1>S U M M A R Y</h1>
+          <p>
+              Data Engineer with Expertise in Apache Airflow, GCP, and Azure Databricks with a proven track record of
+              designing, building, and optimizing data pipelines using Apache Airflow, Google Cloud Platform (GCP) services, and
+              Azure Databricks. I am dedicated to leveraging my technical proficiency to enable data-driven decision-making and
+              deliver impactful solutions for complex data challenges.
+          </p>
+  
+          <h2>S K I L L S</h2>
+          <div class="skills-section">
+              <ul>
+                  <li class="zoom-in-effect">Data Engineering: <span>Apache Airflow | GCP Data Services | Azure Databricks | AWS
+                          S3</span></li>
+                  <li class="zoom-in-effect">Data Tools & Technologies: <span>Teradata | IBM DataStage | Python | PySpark |
+                          SQL</span></li>
+                  <li class="zoom-in-effect">Version Control & CI/CD: <span>GitHub | Bitbucket | Jenkins | Concord
+                          (Walmart)</span></li>
+              </ul>
+          </div>
+      </section>
+  
+      <!-- Floating Icons -->
+      <div class="floating-icons">
+          <i class="icon icon1">&#xf0e0;</i> <!-- Example icon: Microphone (FontAwesome) -->
+          <i class="icon icon2">&#xf2bd;</i> <!-- Example icon: Database -->
+          <i class="icon icon3">&#xf0c0;</i> <!-- Example icon: User -->
+          <i class="icon icon4">&#xf0ad;</i> <!-- Example icon: Desktop -->
+          <i class="icon icon5">&#xf1c0;</i> <!-- Example icon: Bar Chart -->
       </div>
-    </section>
-
+  
   </body>
-
+  
   </html>
+  
