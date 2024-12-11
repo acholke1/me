@@ -383,53 +383,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Floating Emoji</title>
-    <style>
-        body {
-            margin: 0;
-            overflow: hidden;
-        }
-        #floatingEmoji {
-            position: absolute;
-            font-size: 30px;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            animation: float 5s ease-in-out;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Floating Emoji Animation</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+    }
 
-        @keyframes float {
-            0% {
-                transform: translate(-50%, -50%);
-            }
-            25% {
-                transform: translate(-30%, -70%);
-            }
-            50% {
-                transform: translate(-70%, -30%);
-            }
-            75% {
-                transform: translate(-50%, -10%);
-            }
-            100% {
-                transform: translate(-50%, -50%);
-            }
-        }
-    </style>
+    #floatingEmoji {
+      position: absolute;
+      left: 10px; /* Start near the left corner */
+      top: 10px;
+      font-size: 24px;
+      font-family: Arial, sans-serif;
+      animation: moveToCenter 5s ease-in-out forwards;
+    }
+
+    @keyframes moveToCenter {
+      0% {
+        transform: translate(0, 0);
+      }
+      100% {
+        transform: translate(50vw, 50vh); /* Move to the midpoint of the page */
+      }
+    }
+  </style>
 </head>
 <body>
-    <div id="floatingEmoji">👋 Hi Buddy!</div>
+  <div id="floatingEmoji">👋 Hi Buddy!</div>
 
-    <script>
-        // Show the emoji on load
-        const emoji = document.getElementById("floatingEmoji");
-
-        // Automatically remove emoji after 5 seconds
-        setTimeout(() => {
-            emoji.style.display = "none";
-        }, 5000);
-    </script>
+  <script>
+    // Hide the emoji after 5 seconds
+    setTimeout(function() {
+      const emoji = document.getElementById("floatingEmoji");
+      emoji.style.display = "none";
+    }, 5000);
+  </script>
 </body>
 </html>
