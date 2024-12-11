@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Add Font Awesome CDN for icons -->
@@ -9,7 +10,8 @@
             margin: 0;
             color: white;
             background-color: black;
-            overflow: hidden; /* Hide overflow to make floating icons more aesthetic */
+            position: relative;
+            overflow: hidden; /* Hide overflow for aesthetic floating */
         }
 
         h1, p {
@@ -19,25 +21,34 @@
         .content {
             z-index: 1;
             position: relative;
+            padding: 20px;
         }
 
-        /* Floating Icons */
+        h1, h2, p {
+            z-index: 10;
+            position: relative;
+        }
+
+        /* Floating Icons Container */
         .floating-icons {
             position: absolute;
             top: 0;
             left: 0;
-            z-index: -1; /* Keep icons behind the content */
-            pointer-events: none; /* Disable interaction with icons */
+            right: 0;
+            bottom: 0;
+            pointer-events: none; /* Prevent interaction with icons */
+            z-index: 0; /* Keep icons behind content */
         }
 
         .floating-icons .icon {
             font-size: 50px;
-            color: #3498DB; /* Blue color for icons */
+            color: #3498DB;
             position: absolute;
-            animation: floatIcon 10s linear infinite; /* Make icons float */
+            animation: floatIcon 10s linear infinite; /* Continuous floating animation */
+            opacity: 0.8; /* Slight transparency */
         }
 
-        /* Animation for the floating icons */
+        /* Randomized floating animation */
         @keyframes floatIcon {
             0% {
                 transform: translate(0, 0) rotate(0deg);
@@ -100,28 +111,26 @@
 
 <!-- Floating icons representing skills -->
 <div class="floating-icons">
-    <i class="fab fa-python icon" style="animation-delay: 0s;"></i>
-    <i class="fab fa-aws icon" style="animation-delay: 1s;"></i>
-    <i class="fab fa-github icon" style="animation-delay: 2s;"></i>
-    <i class="fab fa-cloud icon" style="animation-delay: 3s;"></i>
-    <i class="fab fa-docker icon" style="animation-delay: 4s;"></i>
-    <i class="fab fa-java icon" style="animation-delay: 5s;"></i>
-    <i class="fab fa-microsoft icon" style="animation-delay: 6s;"></i>
-    <i class="fas fa-database icon" style="animation-delay: 7s;"></i>
-    <i class="fas fa-chart-line icon" style="animation-delay: 8s;"></i>
-    <i class="fab fa-git icon" style="animation-delay: 9s;"></i>
-    <i class="fas fa-server icon" style="animation-delay: 10s;"></i>
-    <i class="fas fa-tasks icon" style="animation-delay: 11s;"></i>
-    <i class="fab fa-grafana icon" style="animation-delay: 12s;"></i>
-    <i class="fab fa-bitbucket icon" style="animation-delay: 13s;"></i>
-    <i class="fab fa-bitbucket icon" style="animation-delay: 14s;"></i>
+    <i class="fab fa-python icon"></i>
+    <i class="fab fa-aws icon"></i>
+    <i class="fab fa-github icon"></i>
+    <i class="fab fa-cloud icon"></i>
+    <i class="fab fa-docker icon"></i>
+    <i class="fab fa-java icon"></i>
+    <i class="fab fa-microsoft icon"></i>
+    <i class="fas fa-database icon"></i>
+    <i class="fas fa-chart-line icon"></i>
+    <i class="fab fa-git icon"></i>
+    <i class="fas fa-server icon"></i>
+    <i class="fas fa-tasks icon"></i>
+    <i class="fab fa-grafana icon"></i>
+    <i class="fab fa-bitbucket icon"></i>
 </div>
 
 <script>
-    // JavaScript to randomize icon positions when the page loads
     document.addEventListener('DOMContentLoaded', function () {
         const icons = document.querySelectorAll('.icon');
-        
+
         icons.forEach(icon => {
             const randomTop = Math.random() * 100; // Random top position (0-100%)
             const randomLeft = Math.random() * 100; // Random left position (0-100%)
