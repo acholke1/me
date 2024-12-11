@@ -380,54 +380,90 @@
 
 <!---start--->
 <style>
+  /* Wrapper for the animation effect */
+  .emoji-animation-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: 1000;
+  }
+
+  /* Emoji animation for the burst effect */
   .emoji-animation {
     font-size: 50px;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: fadeInOut 5s forwards;
+    animation: burstEffect 1s forwards, fadeOut 5s 1s forwards;
   }
 
-  .emoji-center {
-    font-size: 50px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: fadeInOut 5s forwards;
-  }
-
-  @keyframes fadeInOut {
+  /* Animation to simulate the burst effect */
+  @keyframes burstEffect {
     0% {
+      transform: scale(1);
       opacity: 1;
     }
     50% {
+      transform: scale(2);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(5);
+      opacity: 0;
+    }
+  }
+
+  /* Animation to make the emoji fade out */
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    80% {
       opacity: 1;
     }
     100% {
       opacity: 0;
     }
   }
+
+  /* Centered text after the burst */
+  .emoji-center {
+    font-size: 60px;
+    color: #f0f0f0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    animation: fadeInCenter 1s 1s forwards;
+  }
+
+  /* Text fade-in animation */
+  @keyframes fadeInCenter {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 </style>
 
-<div id="emojiAnimation" class="emoji-animation">
-  🎉 Hey Folk! 🎆
+<div class="emoji-animation-wrapper">
+  <div id="emojiAnimation" class="emoji-animation">
+    🎆
+  </div>
+  <div id="emojiCenter" class="emoji-center">
+    🎉 Hey Folk! 🎆
+  </div>
 </div>
-
-<div id="emojiCenter" class="emoji-center">
-  🎉 Hey Folk! 🎆
-</div> 
 
 <script>
   // Function to remove the animation elements after 5 seconds
   setTimeout(function() {
-    document.getElementById('emojiAnimation').style.display = 'none';
-    document.getElementById('emojiCenter').style.display = 'none';
-  }, 5000);
+    document.querySelector('.emoji-animation-wrapper').style.display = 'none';
+  }, 6000);
 </script>
