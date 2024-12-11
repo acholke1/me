@@ -397,24 +397,12 @@
         }
 
         #animatedText {
-            position: absolute;
-            top: 20%;
-            left: 10%;
             font-size: 2rem;
             font-family: Arial, sans-serif;
             display: flex;
             align-items: center;
             gap: 10px;
             animation: moveToCenter 5s ease-in-out, blink 1s infinite alternate;
-        }
-
-        @keyframes moveToCenter {
-            0% {
-                transform: translate(0, 0);
-            }
-            100% {
-                transform: translate(300px, 200px);
-            }
         }
 
         @keyframes blink {
