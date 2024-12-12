@@ -114,8 +114,8 @@
     </style>
     <section id="aboutme">
       <div class="intro" align="center">
-        <h3>  Hey I Am Akash</h3>
-        <p>  Data Engineer</p>
+        <h3>&nbspHey I Am Akash</h3>
+        <p>&nbspData Engineer</p>
         <img src="">
 
         <img src="https://i.imghippo.com/files/Xxs2479LM.png?dl=0" height="200px" width="200px" align="center">
@@ -310,20 +310,30 @@
           showSlides(slideIndex = n);
         }
 
-        function showSlides(n) {
-          var i;
-          var slides = document.getElementsByClassName("mySlides");
-          var dots = document.getElementsByClassName("dot");
-          if (n > slides.length) { slideIndex = 1 }
-          if (n < 1) { slideIndex = slides.length }
-          for (i = 0; i < slides.length; i++) {
+        function showSlides() {
+          const slides = document.getElementsByClassName("mySlides");
+          const dots = document.getElementsByClassName("dot");
+
+          // Hide all slides and remove active class from dots
+          for (let i = 0; i < slides.length; i++) {
             slides[i].style.display = "none";
           }
-          for (i = 0; i < dots.length; i++) {
+          for (let i = 0; i < dots.length; i++) {
             dots[i].className = dots[i].className.replace(" active", "");
           }
+
+          // Increment slide index and reset if it exceeds the number of slides
+          slideIndex++;
+          if (slideIndex > slides.length) {
+            slideIndex = 1;
+          }
+
+          // Display the current slide and activate the corresponding dot
           slides[slideIndex - 1].style.display = "block";
           dots[slideIndex - 1].className += " active";
+
+          // Set a 2-second timer for the next slide
+          setTimeout(showSlides, 2000);
         }
       </script>
       <section id="contact">
@@ -332,7 +342,8 @@
           <hr>
           <p><strong>Ready to Transform Your Data into Insights?</strong></p>
           <p>I believe that great data drives great decisions. Let's discuss how I can help you unlock the full
-            potential of your data.<br />&nbspFeel free to <a href="mailto:akashcholke@gmail.com">email me</a> to get started.</p>
+            potential of your data.<br />&nbspFeel free to <a href="mailto:akashcholke@gmail.com">email me</a> to get
+            started.</p>
           <h3>Otherwise</h3>
           <p>Let's connect and chat!</p>
 
@@ -375,23 +386,3 @@
 
 <!---start--->
 
-<script>
-  let slideIndex = 0;
-  showSlides();
-
-  function showSlides() {
-    const slides = document.getElementsByClassName("mySlides");
-    const dots = document.getElementsByClassName("dot");
-    for (let i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-    }
-    slideIndex++;
-    if (slideIndex > slides.length) { slideIndex = 1 }
-    for (let i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " active";
-    setTimeout(showSlides, 5000); // Change image every 5 seconds
-  }
-</script>
