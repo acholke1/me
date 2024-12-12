@@ -1,457 +1,370 @@
+
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>Technical</title>
+  <title>Technical</title>
 </head>
 
 <body>
-    <!DOCTYPE html>
-    <html>
+  <!DOCTYPE html>
+  <html>
 
-    <head>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      body {
+        font-family: Blippo, fantasy;
+
+      }
+
+      .sidenav {
+
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        background-color: #2C3E50;
+        /* Dark blue-gray */
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+      }
+
+      .sidenav a {
+        Background-color: #2C3E50;
+        Text-align: center;
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 20px;
+        Font-weight: bold;
+        color: rgb(247, 244, 244);
+        display: block;
+        transition: 0.3s;
+      }
+
+      .sidenav a:hover {
+        color: #3498DB;
+        /* Vibrant blue for hover effect */
+      }
+
+
+      .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+
+      @media screen and (max-height: 450px) {
+        .sidenav {
+          padding-top: 15px;
+        }
+
+        .sidenav a {
+          font-size: 18px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="index.html">About Me</a><br />
+      <a href="Technical">Technical</a><br />
+      <a href="Certifications.html">Certifications</a><br />
+      <a href="index.html">Contact</a>
+
+    </div>
+
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
+
+    <script>
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+      }
+
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+      }
+    </script>
+
+
+    <section id="aboutme">
+
+      </div>
+
+      <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
-            body {
-                font-family: Blippo, fantasy;
-
-            }
-
-            .sidenav {
-
-                height: 100%;
-                width: 0;
-                position: fixed;
-                z-index: 1;
-                top: 0;
-                right: 0;
-                background-color: #2C3E50;
-                /* Dark blue-gray */
-                overflow-x: hidden;
-                transition: 0.5s;
-                padding-top: 60px;
-            }
-
-            .sidenav a {
-                Background-color: #2C3E50;
-                Text-align: center;
-                padding: 8px 8px 8px 32px;
-                text-decoration: none;
-                font-size: 20px;
-                Font-weight: bold;
-                color: rgb(247, 244, 244);
-                display: block;
-                transition: 0.3s;
-            }
-
-            .sidenav a:hover {
-                color: #3498DB;
-                /* Vibrant blue for hover effect */
-            }
-
-
-            .sidenav .closebtn {
-                position: absolute;
-                top: 0;
-                right: 25px;
-                font-size: 36px;
-                margin-left: 50px;
-            }
-
-            @media screen and (max-height: 450px) {
-                .sidenav {
-                    padding-top: 15px;
-                }
-
-                .sidenav a {
-                    font-size: 18px;
-                }
-            }
-        </style>
-    </head>
-
-    <body>
-
-        <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="index.html">About Me</a><br />
-            <a href="Technical">Technical</a><br />
-            <a href="Certifications.html">Certifications</a><br />
-            <a href="index.html">Contact</a>
-
-        </div>
-
-        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
-
-        <script>
-            function openNav() {
-            const screenWidth = window.innerWidth;
-            const sidenavWidth = screenWidth > 768 ? "250px" : "60%"; // Adjust width for smaller screens
-            document.getElementById("mySidenav").style.width = sidenavWidth;
+          * {
+            box-sizing: border-box
           }
-          
-          function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
+
+          body {
+            font-family: Verdana, sans-serif;
+            margin: 0
           }
-        </script>
 
+          .mySlides {
+            display: none
+          }
 
-        <section id="aboutme">
+          img {
+            vertical-align: middle;
+          }
 
-            </div>
+          /* Slideshow container */
+          .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+          }
 
-            <head>
-                <meta name="viewport" content="width=device-width, initial-scale=1">
-                <style>
-                    * {
-                        box-sizing: border-box
-                    }
+          /* Next & previous buttons */
+          .prev,
+          .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: #2C3E50;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+          }
 
-                    body {
-                        font-family: Verdana, sans-serif;
-                        margin: 0
-                    }
+          /* Position the "next button" to the right */
+          .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+          }
 
-                    .mySlides {
-                        display: none
-                    }
+          /* On hover, add a black background color with a little bit see-through */
+          .prev:hover,
+          .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+          }
 
-                    img {
-                        vertical-align: middle;
-                    }
+          /* Caption text */
+          .text {
+            color: #ffffff;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+          }
 
-                    /* Slideshow container */
-                    .slideshow-container {
-                        max-width: 1000px;
-                        position: relative;
-                        margin: auto;
-                    }
+          /* Number text (1/3 etc) */
+          .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+          }
 
-                    /* Next & previous buttons */
-                    .prev,
-                    .next {
-                        cursor: pointer;
-                        position: absolute;
-                        top: 50%;
-                        width: auto;
-                        padding: 16px;
-                        margin-top: -22px;
-                        color: #2C3E50;
-                        font-weight: bold;
-                        font-size: 18px;
-                        transition: 0.6s ease;
-                        border-radius: 0 3px 3px 0;
-                        user-select: none;
-                    }
+          /* The dots/bullets/indicators */
+          .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+          }
 
-                    /* Position the "next button" to the right */
-                    .next {
-                        right: 0;
-                        border-radius: 3px 0 0 3px;
-                    }
+          .active,
+          .dot:hover {
+            background-color: #ffffff;
+          }
 
-                    /* On hover, add a black background color with a little bit see-through */
-                    .prev:hover,
-                    .next:hover {
-                        background-color: rgba(0, 0, 0, 0.8);
-                    }
+          /* Fading animation */
+          .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.5s;
+            animation-name: fade;
+            animation-duration: 1.5s;
+          }
 
-                    /* Caption text */
-                    .text {
-                        color: #ffffff;
-                        font-size: 15px;
-                        padding: 8px 12px;
-                        position: absolute;
-                        bottom: 8px;
-                        width: 100%;
-                        text-align: center;
-                    }
-
-                    /* Number text (1/3 etc) */
-                    .numbertext {
-                        color: #f2f2f2;
-                        font-size: 12px;
-                        padding: 8px 12px;
-                        position: absolute;
-                        top: 0;
-                    }
-
-                    /* The dots/bullets/indicators */
-                    .dot {
-                        cursor: pointer;
-                        height: 15px;
-                        width: 15px;
-                        margin: 0 2px;
-                        background-color: #bbb;
-                        border-radius: 50%;
-                        display: inline-block;
-                        transition: background-color 0.6s ease;
-                    }
-
-                    .active,
-                    .dot:hover {
-                        background-color: #ffffff;
-                    }
-
-                    /* Fading animation */
-                    .fade {
-                        -webkit-animation-name: fade;
-                        -webkit-animation-duration: 1.5s;
-                        animation-name: fade;
-                        animation-duration: 1.5s;
-                    }
-
-                    @-webkit-keyframes fade {
-                        from {
-                            opacity: .4
-                        }
-
-                        to {
-                            opacity: 1
-                        }
-                    }
-
-                    @keyframes fade {
-                        from {
-                            opacity: .4
-                        }
-
-                        to {
-                            opacity: 1
-                        }
-                    }
-
-                    /* On smaller screens, decrease text size */
-                    @media only screen and (max-width: 300px) {
-
-                        .prev,
-                        .next,
-                        .text {
-                            font-size: 11px
-                        }
-                    }
-                </style>
-            </head>
-
-
-            </script>
-
-            <section id="contact">
-
-            </section>
-
-            </p>
-    </body>
-    </section>
-
-    <!DOCTYPE html>
-    <html>
-
-    <!--start-->
-
-    <!DOCTYPE html>
-    <html lang="en">
-
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-        <!-- Font Awesome CDN for icons -->
-        <style>
-            /* Base styles */
-            body {
-                font-family: Verdana, sans-serif;
-                margin: 0;
-                padding: 0;
+          @-webkit-keyframes fade {
+            from {
+              opacity: .4
             }
 
-            .sidenav {
-                height: 100%;
-                width: 0;
-                /* Adjust dynamically in JavaScript */
-                position: fixed;
-                z-index: 1;
-                top: 0;
-                right: 0;
-                background-color: #2C3E50;
-                overflow-x: hidden;
-                transition: 0.5s;
-                padding-top: 60px;
+            to {
+              opacity: 1
+            }
+          }
+
+          @keyframes fade {
+            from {
+              opacity: .4
             }
 
-            .sidenav a {
-                text-align: center;
-                padding: 8px 32px;
-                text-decoration: none;
-                font-size: 1.2em;
-                /* Use relative units */
-                font-weight: bold;
-                color: rgb(247, 244, 244);
-                display: block;
-                transition: 0.3s;
+            to {
+              opacity: 1
             }
+          }
 
-            .sidenav a:hover {
-                color: #3498DB;
-            }
-
-            .sidenav .closebtn {
-                position: absolute;
-                top: 0;
-                right: 25px;
-                font-size: 36px;
-                margin-left: 50px;
-            }
-
-            /* Media queries for responsive design */
-            @media screen and (max-width: 768px) {
-                .sidenav a {
-                    font-size: 1em;
-                    padding: 8px 16px;
-                }
-            }
-
-            @media screen and (max-height: 450px) {
-                .sidenav {
-                    padding-top: 15px;
-                }
-
-                .sidenav a {
-                    font-size: 0.9em;
-                }
-            }
-
-            .slideshow-container {
-                max-width: 100%;
-                margin: auto;
-                position: relative;
-            }
+          /* On smaller screens, decrease text size */
+          @media only screen and (max-width: 300px) {
 
             .prev,
-            .next {
-                padding: 10px;
-                font-size: 16px;
+            .next,
+            .text {
+              font-size: 11px
             }
-
-            .content h1,
-            .content h2,
-            .content p {
-                margin: 0 auto;
-                max-width: 90%;
-                text-align: center;
-            }
-
-            .skills-section ul {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 10px;
-                padding: 0;
-                list-style-type: none;
-            }
-
-            .skills-section ul li {
-                width: calc(100% / 3 - 20px);
-                /* Adjust dynamically for smaller screens */
-                background-color: #2C3E50;
-                padding: 10px;
-                border-radius: 5px;
-            }
-
-
-            .zoom-in-effect {
-                animation: zoomIn 1s ease-in-out forwards;
-            }
-
-            .content h1 {
-                text-align: center;
-                font-size: 2.5em;
-                margin-bottom: 20px;
-            }
-
-            .content p {
-                text-align: center;
-                font-size: 1.2em;
-                margin-top: 10px;
-            }
-
-            .content h2 {
-                text-align: center;
-                font-size: 2em;
-                margin-top: 50px;
-            }
-
-            /* Style for the circular icons section */
-            .icons-section {
-                text-align: center;
-                margin-top: 50px;
-            }
-
-            .icon-container {
-                display: flex;
-                justify-content: center;
-                gap: 20px;
-                flex-wrap: wrap;
-            }
-
-            .icon-container i {
-                font-size: 40px;
-                color: #3498DB;
-                background-color: #2C3E50;
-                border-radius: 50%;
-                padding: 20px;
-                transition: transform 0.5s;
-            }
-
-            .icon-container i:hover {
-                transform: rotateY(180deg);
-            }
+          }
         </style>
-    </head>
+      </head>
 
-    <body>
 
-        <section class="content">
-            <h1>S U M M A R Y</h1>
-            <p>
-                Data Engineer with Expertise in Apache Airflow, GCP, and Azure Databricks with a proven track record of
-                designing,
-                building, and optimizing data pipelines using Apache Airflow, Google Cloud Platform (GCP) services, and
-                Azure
-                Databricks. I am dedicated to leveraging my technical proficiency to enable data-driven decision-making
-                and
-                deliver
-                impactful solutions for complex data challenges.
-            </p>
+      </script>
 
-            <h2>S K I L L S</h2>
-            <div class="skills-section">
-                <ul>
-                    <li class="zoom-in-effect">Data Engineering: <span>Apache Airflow | GCP Data Services | Azure
-                            Databricks | AWS
-                            S3</span></li>
-                    <li class="zoom-in-effect">Data Tools & Technologies: <span>Teradata | IBM DataStage | Python |
-                            PySpark |
-                            SQL</span></li>
-                    <li class="zoom-in-effect">Version Control & CI/CD: <span>GitHub | Bitbucket | Jenkins | Concord
-                            (Walmart)</span></li>
-                </ul>
-            </div>
-        </section>
+      <section id="contact">
 
-        <!-- Icons Section -->
-        <section class="icons-section">
-            <div class="icon-container">
-                <i class="fas fa-database" title="Database"></i>
-                <i class="fas fa-cogs" title="Data Management"></i>
-                <i class="fas fa-hdd" title="Big Data"></i> <!-- Changed icon for Big Data -->
-                <i class="fas fa-clipboard-list" title="Monitoring"></i> <!-- Changed icon for Monitoring -->
-                <i class="fas fa-chart-pie" title="Data Analytics"></i>
-                <i class="fas fa-tachometer-alt" title="Performance"></i>
-                <i class="fas fa-brain" title="Predictive Analysis"></i>
-            </div>
-        </section>
-        
+      </section>
 
-    </body>
+      </p>
+  </body>
+  </section>
 
-    </html>
+  <!DOCTYPE html>
+  <html>
+
+  <!--start-->
+
+  <!DOCTYPE html>
+  <html lang="en">
+  
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"> <!-- Font Awesome CDN for icons -->
+      <style>
+          body {
+              font-family: Verdana, sans-serif;
+              margin: 0;
+              background-color: black;
+              color: white;
+          }
+  
+          /* Wrapper for full-screen centering */
+          .content-wrapper {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              height: 100vh; /* Full viewport height */
+              padding: 20px;
+              text-align: center;
+          }
+  
+          h1, h2 {
+              margin: 10px 0;
+          }
+  
+          p {
+              margin: 20px 0;
+              font-size: 1.2em;
+              max-width: 800px;
+              line-height: 1.5;
+          }
+  
+          .skills-section ul {
+              padding: 0;
+              list-style-type: none;
+              margin: 20px auto;
+          }
+  
+          .skills-section ul li {
+              padding: 10px 20px;
+              font-size: 1em;
+              background-color: #2C3E50;
+              color: white;
+              border-radius: 5px;
+              margin: 5px 0;
+              display: inline-block;
+          }
+  
+          /* Style for the circular icons section */
+          .icons-section {
+              margin-top: 50px;
+          }
+  
+          .icon-container {
+              display: flex;
+              justify-content: center;
+              gap: 20px;
+              flex-wrap: wrap;
+          }
+  
+          .icon-container i {
+              font-size: 40px;
+              color: #3498DB;
+              background-color: #2C3E50;
+              border-radius: 50%;
+              padding: 20px;
+              transition: transform 0.5s;
+          }
+  
+          .icon-container i:hover {
+              transform: rotateY(180deg);
+          }
+      </style>
+  </head>
+  
+  <body>
+  
+      <div class="content-wrapper">
+          <section class="content">
+              <h1>S U M M A R Y</h1>
+              <p>
+                  Data Engineer with Expertise in Apache Airflow, GCP, and Azure Databricks with a proven track record of
+                  designing, building, and optimizing data pipelines using Apache Airflow, Google Cloud Platform (GCP)
+                  services, and Azure Databricks. I am dedicated to leveraging my technical proficiency to enable data-driven
+                  decision-making and deliver impactful solutions for complex data challenges.
+              </p>
+  
+              <h2>S K I L L S</h2>
+              <div class="skills-section">
+                  <ul>
+                      <li>Data Engineering: <span>Apache Airflow | GCP Data Services | Azure Databricks | AWS S3</span></li>
+                      <li>Data Tools & Technologies: <span>Teradata | IBM DataStage | Python | PySpark | SQL</span></li>
+                      <li>Version Control & CI/CD: <span>GitHub | Bitbucket | Jenkins | Concord (Walmart)</span></li>
+                  </ul>
+              </div>
+          </section>
+  
+          <!-- Icons Section -->
+          <section class="icons-section">
+              <div class="icon-container">
+                  <i class="fas fa-database" title="Database"></i>
+                  <i class="fas fa-cogs" title="Data Management"></i>
+                  <i class="fas fa-hdd" title="Big Data"></i>
+                  <i class="fas fa-clipboard-list" title="Monitoring"></i>
+                  <i class="fas fa-chart-pie" title="Data Analytics"></i>
+                  <i class="fas fa-tachometer-alt" title="Performance"></i>
+                  <i class="fas fa-brain" title="Predictive Analysis"></i>
+              </div>
+          </section>
+      </div>
+  
+  </body>
+  
+  </html>
+  
+  
