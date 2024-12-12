@@ -77,7 +77,7 @@
             <a href="index.html">About Me</a><br />
             <a href="Technical">Technical</a><br />
             <a href="Certifications.html">Certifications</a><br />
-            <a href="#contact">Contact</a>
+            <a href="index.html">Contact</a>
 
         </div>
 
@@ -85,12 +85,14 @@
 
         <script>
             function openNav() {
-                document.getElementById("mySidenav").style.width = "250px";
-            }
-
-            function closeNav() {
-                document.getElementById("mySidenav").style.width = "0";
-            }
+            const screenWidth = window.innerWidth;
+            const sidenavWidth = screenWidth > 768 ? "250px" : "60%"; // Adjust width for smaller screens
+            document.getElementById("mySidenav").style.width = sidenavWidth;
+          }
+          
+          function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+          }
         </script>
 
 
@@ -257,7 +259,7 @@
         <style>
             /* Base styles */
             body {
-                font-family: Blippo, fantasy;
+                font-family: Verdana, sans-serif;
                 margin: 0;
                 padding: 0;
             }
@@ -448,6 +450,7 @@
                 <i class="fas fa-brain" title="Predictive Analysis"></i>
             </div>
         </section>
+        
 
     </body>
 
