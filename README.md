@@ -10,4 +10,4 @@ I am not a professional web developer. This page was created out of curiosity an
 
 I would love to see your version of this page as well! Feel free to fork this repository and show your modifications. Collaboration and sharing ideas are always welcome.
 
-Thank you for visiting, and happy coding!
+Thank you for visiting and happy coding!
